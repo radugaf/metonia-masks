@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<!-- Main Wrapper Start -->
+<div class="main-content-wrapper">
+  <div class="about-area bg--dark-3 mt--40 mt-sm--30">
+    <div class="container-fluid p-0">
+      <div class="row no-gutters align-items-center">
+        <div class="col-xl-6">
+          <div class="img-box text-center">
+            <img src="{% static 'assets/img/about/about-us-img1.jpg' %}" alt="about">
+          </div>
+        </div>
+        <div class="col-xl-6">
+          <div class="row">
+            <div class="col-10 offset-1">
+              <div class="about-text text-center">
+                <h2 class="heading-secondary mb--40 mb-sm--30">
+                  About Us
+                </h2>
+                <p class="mb--40 mb-sm--30">
+                  Un duo mama-fiica cu o dragoste aparte pentru piese vintage care rezista trecerii timpului. Fiecare piesa creata cu drag raspunde unei singure intrebari: noi am purta-o cu drag?</p>
+                <div class="about-btn-group text-center">
+                  <a href="/" class="btn btn-style-3">view our work</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Main Wrapper End -->
+
+{% endblock content %}

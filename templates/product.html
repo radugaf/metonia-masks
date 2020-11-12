@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Main Content Wrapper Start -->
+<div class="main-content-wrapper">
+  <div class="single-products-area section-padding section-md-padding">
+    <div class="container">
+      <!-- Single Product Start -->
+      <section class="mirora-single-product pb--80 pb-md--60">
+        <div class="row">
+          <div class="col-lg-6">
+            <!-- Tab Content Start -->
+            <div class="tab-content product-details-thumb-large" id="myTabContent-3">
+              <div class="tab-pane fade show active" id="product-large-one">
+                <div class="product-details-img easyzoom">
+                  <a class="popup-btn" href="assets/img/products/3-900x900.jpg">
+                    <img src="assets/img/products/3-900x900.jpg" alt="product" />
+                  </a>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="product-large-two">
+                <div class="product-details-img easyzoom">
+                  <a class="popup-btn" href="assets/img/products/4-900x900.jpg">
+                    <img src="assets/img/products/4-900x900.jpg" alt="product" />
+                  </a>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="product-large-three">
+                <div class="product-details-img easyzoom">
+                  <a class="popup-btn" href="assets/img/products/5-900x900.jpg">
+                    <img src="assets/img/products/5-900x900.jpg" alt="product" />
+                  </a>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="product-large-four">
+                <div class="product-details-img easyzoom">
+                  <a class="popup-btn" href="assets/img/products/6-900x900.jpg">
+                    <img src="assets/img/products/6-900x900.jpg" alt="product" />
+                  </a>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="product-large-five">
+                <div class="product-details-img easyzoom">
+                  <a class="popup-btn" href="assets/img/products/10-900x900.jpg">
+                    <img src="assets/img/products/10-900x900.jpg" alt="product" />
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- Tab Content End -->
+
+            <!-- Product Thumbnail Carousel Start -->
+            <div class="product-details-thumbnail">
+              <div class="thumb-menu product-details-thumb-menu nav-vertical-center" id="thumbmenu-horizontal">
+                <div class="thumb-menu-item">
+                  <a href="#product-large-one" data-toggle="tab" class="nav-link active">
+                    <img src="assets/img/products/3-450x450.jpg" alt="product thumb" />
+                  </a>
+                </div>
+                <div class="thumb-menu-item">
+                  <a href="#product-large-two" data-toggle="tab" class="nav-link">
+                    <img src="assets/img/products/4-450x450.jpg" alt="product thumb" />
+                  </a>
+                </div>
+
+              </div>
+            </div>
+            <!-- Product Thumbnail Carousel End -->
+          </div>
+          <div class="col-lg-6">
+            <!-- Single Product Content Start -->
+            <div class="product-details-content">
+              <div class="product-details-top">
+                <h2 class="product-details-name">{{ item.title }}</h2>
+
+                <ul class="product-details-list list-unstyled">
+                  <li>Category: {{ object.get_category_display }}</li>
+                </ul>
+                <div class="product-details-price-wrapper">
+                  {% if object.discount_price %}
+                  <span class="product-price-old">
+                    <span class="money">
+                      <del>{{ object.price }}</del>
+                    </span>
+                  </span>
+                  <span class="money">{{ object.discount_price }}</span>
+                  {% else %}
+                  <span class="money">{{ object.price }}</span>
+                  {% endif %}
+                </div>
+              </div>
+
+              <div class="product-details-bottom">
+                <div class="product-details-action-wrapper mb--20">
+                  <div class="product-details-action-top d-flex align-items-center mb--20">
+                    <a type="button" class="btn btn-medium btn-style-2 add-to-car" href="{{ object.get_add_to_cart_url }}">
+                      Add To Cart
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Single Product Content End -->
+          </div>
+        </div>
+      </section>
+      <!-- Single Product End -->
+
+      <!-- Single Product Tab Start -->
+      <section class="product-details-tab bg--dark-4 ptb--80 ptb-md--60">
+        <div class="row">
+          <div class="col-12">
+            <ul class="product-details-tab-head nav nav-tab" id="singleProductTab" role="tablist">
+              <li class="nav-item product-details-tab-item">
+                <a class="nav-link product-details-tab-link active" id="nav-desc-tab" data-toggle="tab" href="#nav-desc" role="tab" aria-controls="nav-desc" aria-selected="true">Description</a>
+              </li>
+
+            </ul>
+            <div class="product-details-tab-content tab-content">
+              <div class="tab-pane fade show active" id="nav-desc" role="tabpanel" aria-labelledby="nav-desc-tab">
+
+                <p class="product-details-description">
+                  {{ object.description }}
+                </p>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Single Product Tab End -->
+
+
+    </div>
+  </div>
+</div>
+<!-- Main Content Wrapper End -->
+
+
+{% endblock content %}

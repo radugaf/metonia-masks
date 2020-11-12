@@ -1,0 +1,421 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<main>
+  <div class="container wow fadeIn">
+    <h2 class="my-5 h2 text-center">Checkout form</h2>
+    <div class="row">
+      <div class="col-md-8 mb-4">
+        <div class="card">
+          <form method="POST" class="card-body">
+            {% csrf_token %}
+
+            <h3>Shipping address</h3>
+
+            <div class='hideable_shipping_form'>
+
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" name="same_billing_address" id="same_billing_address">
+                <label class="custom-control-label" for="same_billing_address">Billing address is the same as my shipping address</label>
+              </div>
+
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" name="set_default_shipping" id="set_default_shipping">
+                <label class="custom-control-label" for="set_default_shipping">Save as default shipping address</label>
+              </div>
+
+            </div>
+
+            {% if default_shipping_address %}
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" name="use_default_shipping" id="use_default_shipping">
+              <label class="custom-control-label" for="use_default_shipping">Use default shipping address: {{ default_shipping_address.street_address|truncatechars:10 }}</label>
+            </div>
+            {% endif %}
+
+            <hr>
+
+            <h3>Billing address</h3>
+
+            <div class='hideable_billing_form'>
+              <div class="md-form mb-5">
+                <input type='text' placeholder='1234 Main St' id='billing_address' name='billing_address' class='form-control' />
+                <label for="billing_address" class="">Address</label>
+              </div>
+
+              <div class="md-form mb-5">
+                <input type='text' placeholder='Apartment or suite' id='billing_address2' name='billing_address2' class='form-control' />
+                <label for="billing_address2" class="">Address 2 (optional)</label>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-4 col-md-12 mb-4">
+                  <label for="country">Country</label>
+                  {{ form.billing_country }}
+                  <div class="invalid-feedback">
+                    Please select a valid country.
+                  </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                  <label for="billing_zip">Zip</label>
+                  <input type='text' placeholder='Zip code' id='billing_zip' name='billing_zip' class='form-control' />
+                  <div class="invalid-feedback">
+                    Zip code required.
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" class="custom-control-input" name="set_default_billing" id="set_default_billing">
+                <label class="custom-control-label" for="set_default_billing">Save as default billing address</label>
+              </div>
+
+            </div>
+
+            {% if default_billing_address %}
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" name="use_default_billing" id="use_default_billing">
+              <label class="custom-control-label" for="use_default_billing">Use default billing address: {{ default_billing_address.street_address|truncatechars:10 }}</label>
+            </div>
+            {% endif %}
+            <hr>
+
+            <h3>Payment option</h3>
+
+            <div class="d-block my-3">
+              {% for value, name in form.fields.payment_option.choices %}
+              <div class="custom-control custom-radio">
+                <input id="{{ name }}" name="payment_option" value="{{ value }}" type="radio" class="custom-control-input" required>
+                <label class="custom-control-label" for="{{ name }}">{{ name }}</label>
+              </div>
+              {% endfor %}
+            </div>
+
+            <hr class="mb-4">
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+
+          </form>
+
+        </div>
+
+      </div>
+
+      <div class="col-md-4 mb-4">
+
+      </div>
+
+    </div>
+
+  </div>
+</main>
+
+
+
+
+
+
+
+
+
+
+<!-- Main content wrapper start -->
+<div class="main-content-wrapper">
+  <div class="checkout-area pt--40 pb--80 pt-md--30 pb-md--60">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <!-- User Action Start -->
+          <div class="user-actions">
+            <div class="row">
+              <div class="col-12">
+
+                <div class="user-actions__single user-actions__coupon">
+                  <h3><i class="fa fa-cube"></i> Have A Coupon? <span class="expand_action" data-attr="#coupon_info">Click Here To Enter Your Code.</span></h3>
+                  <div id="coupon_info" class="user-actions__form user-actions--coupon hide-in-default">
+                    <form action="#" class="form">
+                      <div class="form__group d-flex">
+                        <input type="text" name="coupon" id="coupon" class="form__input form__input--2 form__input--w285 mr--20" placeholder="Coupon Code">
+                        <button type="submit" class="btn btn-medium btn-style-3">Apply Coupon</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- User Action End -->
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <!-- Checkout Area Start -->
+          <div class="checkout-wrapper bg--2">
+            <div class="row">
+              <div class="col-lg-6">
+                <div class="checkout-title">
+                  <h2>Shipping Address</h2>
+                </div>
+                <div class="checkout-form">
+                  <form action="POST" class="form">
+                    {% csrf_token %}
+
+                    <div class="form-row mb--30">
+                      <div class="form__group col-12">
+                        <label for="billing_company" class="form__label">Shipping Address</label>
+                        <input type="text" placeholder='1234 Main St' id='shipping_address' name='shipping_address' class="form__input form__input--2">
+                      </div>
+                    </div>
+
+                    <div class="form-row mb--30">
+                      <div class="form__group col-12">
+                        <label for="billing_company" class="form__label">Shipping Address 2</label>
+                        <input type="text" placeholder='Apartment or suite' id='shipping_address2' name='shipping_address2' class="form__input form__input--2">
+                      </div>
+                    </div>
+
+                    <div class="form-row mb--30">
+                      <div class="form__group col-12">
+                        <label for="billing_country" class="form__label">Country</label>
+                        {{ form.billing_country }}
+                        <div class="invalid-feedback">
+                          Please select a valid country.
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-row mb--30">
+                      <div class="form__group col-12">
+                        <label for="billing_streetAddress" class="form__label">ZIP Code</label>
+                        <input type="text" placeholder='Zip code' id='shipping_zip' name='shipping_zip' class="form__input form__input--2">
+                        <div class="invalid-feedback">
+                          Zip code required.
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" name="same_billing_address" id="same_billing_address">
+                      <label class="custom-control-label" for="same_billing_address">Billing address is the same as my shipping address</label>
+                    </div>
+
+
+                    <div class="form-row mb--30">
+                      <div class="form__group col-12">
+                        <label for="billing_apartment" class="form__label">Apartment, suite, unit etc. (optional)</label>
+                        <input type="text" name="billing_apartment" id="billing_apartment" class="form__input form__input--2">
+                      </div>
+                    </div>
+                    <div class="form-row mb--30">
+                      <div class="form__group col-12">
+                        <label for="billing_city" class="form__label">Town/City <span>*</span></label>
+                        <input type="text" name="billing_city" id="billing_city" class="form__input form__input--2">
+                      </div>
+                    </div>
+                    <div class="form-row mb--30">
+                      <div class="form__group col-12">
+                        <label for="billing_district" class="form__label">District <span>*</span></label>
+                        <select name="billing_district" id="billing_district" class="form__input form__input--2 nice-select">
+                          <option value="">Select a District…</option>
+                          <option>BARISAL</option>
+                          <option>BHOLA</option>
+                          <option>BANDARBAN</option>
+                          <option>BRAHMANBARIA</option>
+                          <option>CHANDPUR</option>
+                          <option>CHITTAGONG</option>
+                          <option>COMILLA</option>
+                          <option>COX'S BAZAR</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="form-row mb--30">
+                      <div class="form__group col-12">
+                        <label for="billing_zip" class="form__label">Post/Zip Code <span>*</span></label>
+                        <input type="text" name="billing_zip" id="billing_zip" class="form__input form__input--2">
+                      </div>
+                    </div>
+                    <div class="form-row mb--30">
+                      <div class="form__group col-md-6 mb-sm--30">
+                        <label for="billing_phone" class="form__label">Phone</label>
+                        <input type="text" name="billing_phone" id="billing_phone" class="form__input form__input--2">
+                      </div>
+                      <div class="form__group col-md-6">
+                        <label for="billing_email" class="form__label">Email Address <span>*</span></label>
+                        <input type="email" name="billing_email" id="billing_email" class="form__input form__input--2">
+                      </div>
+                    </div>
+                    <div class="form-row mb--30">
+                      <div class="form__group col-12">
+                        <div class="custom-checkbox">
+                          <input type="checkbox" name="createaccount" id="createaccount" class="form__checkbox">
+
+                          <label for="createaccount" class="form__checkbox--label">Create An Account?</label>
+                        </div>
+                        <div class="new-account hide-in-default">
+                          <p>Create an account by entering the information below. If you are a returning customer please login at the top of the page.</p>
+                          <label for="newPass" class="form__label">Password <span>*</span></label>
+                          <input type="text" name="newPass" id="newPass" class="form__input form__input--2">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-row mb--30">
+                      <div class="form__group col-12">
+                        <div class="custom-checkbox">
+                          <input type="checkbox" name="shipdifferetads" id="shipdifferetads" class="form__checkbox">
+
+                          <label for="shipdifferetads" class="form__checkbox--label shipping-label">Ship To A Different Address?</label>
+                        </div>
+                        <div class="ship-box-info hide-in-default mt--30">
+                          <div class="form-row mb--30">
+                            <div class="form__group col-md-6 mb-sm--30">
+                              <label for="shipping_fname" class="form__label">First Name <span>*</span></label>
+                              <input type="text" name="shipping_fname" id="shipping_fname" class="form__input form__input--2">
+                            </div>
+                            <div class="form__group col-md-6">
+                              <label for="shipping_lname" class="form__label">Last Name <span>*</span></label>
+                              <input type="text" name="shipping_lname" id="shipping_lname" class="form__input form__input--2">
+                            </div>
+                          </div>
+                          <div class="form-row mb--30">
+                            <div class="form__group col-12">
+                              <label for="shipping_company" class="form__label">Company</label>
+                              <input type="text" name="shipping_company" id="shipping_company" class="form__input form__input--2">
+                            </div>
+                          </div>
+                          <div class="form-row mb--30">
+                            <div class="form__group col-12">
+                              <label for="shipping_country" class="form__label">Country</label>
+                              <select id="shipping_country" name="shipping_country" class="form__input form__input--2 nice-select">
+                                <option value="">Select a country…</option>
+                                <option value="AF">Afghanistan</option>
+                                <option value="AL">Albania</option>
+                                <option value="DZ">Algeria</option>
+                                <option value="AR">Argentina</option>
+                                <option value="AM">Armenia</option>
+                                <option value="AU">Australia</option>
+                                <option value="AT">Austria</option>
+                                <option value="AZ">Azerbaijan</option>
+                                <option value="BH">Bahrain</option>
+                                <option value="BD" selected="selected">Bangladesh</option>
+                                <option value="BD">Brazil</option>
+                                <option value="CN">China</option>
+                                <option value="EG">Egypt</option>
+                                <option value="FR">France</option>
+                                <option value="DE">Germany</option>
+                                <option value="HK">Hong Kong</option>
+                                <option value="HU">Hungary</option>
+                                <option value="IS">Iceland</option>
+                                <option value="IN">India</option>
+                                <option value="AE">United Arab Emirates</option>
+                                <option value="GB">United Kingdom (UK)</option>
+                                <option value="US">United States (US)</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="form-row mb--30">
+                            <div class="form__group col-12">
+                              <label for="shipping_streetAddress" class="form__label">Street Address</label>
+                              <input type="text" name="shipping_streetAddress" id="shipping_streetAddress" class="form__input form__input--2">
+                            </div>
+                          </div>
+                          <div class="form-row mb--30">
+                            <div class="form__group col-12">
+                              <label for="shipping_apartment" class="form__label">Apartment, suite, unit etc. (optional)</label>
+                              <input type="text" name="shipping_apartment" id="shipping_apartment" class="form__input form__input--2">
+                            </div>
+                          </div>
+                          <div class="form-row mb--30">
+                            <div class="form__group col-12">
+                              <label for="shipping_city" class="form__label">Town/City <span>*</span></label>
+                              <input type="text" name="shipping_city" id="shipping_city" class="form__input form__input--2">
+                            </div>
+                          </div>
+                          <div class="form-row mb--30">
+                            <div class="form__group col-12">
+                              <label for="shipping_district" class="form__label">Districtg <span>*</span></label>
+                              <select id="shipping_district" name="shipping_district" class="form__input form__input--2 nice-select">
+                                <option value="">Select a District…</option>
+                                <option>BARISAL</option>
+                                <option>BHOLA</option>
+                                <option>NOAKHALI</option>
+                                <option>RANGAMATI </option>
+                                <option>RAJBARI</option>
+                                <option>SHARIATPUR</option>
+                                <option>SHERPUR</option>
+                                <option>TANGAIL</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="form-row mb--30">
+                            <div class="form__group col-12">
+                              <label for="shipping_zip" class="form__label">Post/Zip Code <span>*</span></label>
+                              <input type="text" name="shipping_zip" id="shipping_zip" class="form__input form__input--2">
+                            </div>
+                          </div>
+                          <div class="form-row mb--30">
+                            <div class="form__group col-md-6 mb-sm--30">
+                              <label for="shipping_phone" class="form__label">Phone</label>
+                              <input type="text" name="shipping_phone" id="shipping_phone" class="form__input form__input--2">
+                            </div>
+                            <div class="form__group col-md-6">
+                              <label for="shipping_email" class="form__label">Email Address <span>*</span></label>
+                              <input type="email" name="shipping_email" id="shipping_email" class="form__input form__input--2">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="form__group col-12">
+                        <label for="orderNotes" class="form__label">Order Notes</label>
+                        <textarea class="form__input form__input--2 form__input--textarea" id="orderNotes" name="orderNotes" placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="col-lg-6 mt-md--30">
+
+                  {% include "order_snippet.html" %}
+
+              </div>
+            </div>
+          </div>
+          <!-- Checkout Area End -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Main content wrapper end -->
+
+{% endblock content %}
+
+{% block extra_scripts %}
+<script>
+  var hideable_shipping_form = $('.hideable_shipping_form');
+  var hideable_billing_form = $('.hideable_billing_form');
+
+  var use_default_shipping = document.querySelector("input[name=use_default_shipping]");
+  var use_default_billing = document.querySelector("input[name=use_default_billing]");
+
+  use_default_shipping.addEventListener('change', function() {
+    if (this.checked) {
+      hideable_shipping_form.hide();
+    } else {
+      hideable_shipping_form.show();
+    }
+  })
+
+  use_default_billing.addEventListener('change', function() {
+    if (this.checked) {
+      hideable_billing_form.hide();
+    } else {
+      hideable_billing_form.show();
+    }
+  })
+</script>
+{% endblock extra_scripts %}

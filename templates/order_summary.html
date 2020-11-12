@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Main content wrapper start -->
+
+<div class="main-content-wrapper">
+  <div class="cart-area pt--40 pb--80 pt-md--30 pb-md--60">
+    <div class="container">
+      <div class="cart-wrapper bg--2 mb--80 mb-md--60">
+        <div class="row">
+          <div class="col-12">
+            <!-- Cart Area Start -->
+            <form action="#" class="form cart-form">
+              <div class="cart-table table-content table-responsive">
+                <table class="table mb--30">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Product</th>
+                      <th>Unit Price</th>
+                      <th>Quantity</th>
+                      <th>Total</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for order_item in object.items.all %}
+                    <tr>
+                      <th scope="row">{{ forloop.counter }}</th>
+
+                      <td class="wide-column">
+                        <h3><a href="product-details.html">{{ order_item.item.title }}</a></h3>
+                      </td>
+
+                      <td class="cart-product-price"><strong>{{ order_item.item.price }} LEI</strong></td>
+
+                      <td>
+
+                        <a href="{% url 'core:remove-single-item-from-cart' order_item.item.slug %}"><i class="fas fa-minus mr-2"></i></a>
+                        {{ order_item.quantity }}
+                        <a href="{% url 'core:add-to-cart' order_item.item.slug %}"><i class="fas fa-plus ml-2"></i></a>
+                      </td>
+
+                      <td class="cart-product-price">
+                        {% if order_item.item.discount_price %}
+                        {{ order_item.get_total_discount_item_price }} LEI
+                        <span class="badge badge-success">Saving ${{ order_item.get_amount_saved }}</span>
+                        {% else %}
+                        ${{ order_item.get_total_item_price }}
+                        {% endif %}
+                        <a style='color: red;' href="{% url 'core:remove-from-cart' order_item.item.slug %}">
+                          <i class="fas fa-trash float-right"></i>
+                        </a>
+                      </td>
+
+                    </tr>
+                  </tbody>
+                  {% endfor %}
+                </table>
+              </div>
+            </form>
+            <!-- Cart Area End -->
+          </div>
+        </div>
+      </div>
+      <div class="cart-page-total-wrapper">
+        <div class="row justify-content-end">
+          <div class="col-xl-6 col-lg-8 col-md-10">
+            <div class="cart-page-total bg--dark-3">
+              <h2>Cart Totals</h2>
+              <div class="cart-calculator-table table-content table-responsive">
+                <table class="table">
+                  <tbody>
+
+                    <!-- Discount Price -->
+                    {% if object.coupon %}
+                    <tr class="cart-subtotal">
+                      <th>Discount</th>
+                      <td><span class="price-ammount">{{ object.coupon.amount }} LEI</span></td>
+                    </tr>
+                    {% endif %}
+                    <!-- Discount Price end -->
+
+                    <!-- Total Price -->
+                    {% if object.get_total %}
+                    <tr class="cart-total">
+                      <th>TOTAL</th>
+                      <td><span class="price-ammount">{{ object.get_total }} LEI</span></td>
+                    </tr>
+                    {% endif %}
+                    <!-- Total Price End-->
+
+                  </tbody>
+                </table>
+              </div>
+
+              {% if object.get_total %}
+              <a href='/checkout/' class="btn btn-medium btn-style-3">Proceed to Checkout</a>
+              <a href='/' class="btn btn-medium btn-style-4">Continue Shopping</a>
+              {% endif %}
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Main content wrapper end -->
+
+
+
+{% endblock content %}
