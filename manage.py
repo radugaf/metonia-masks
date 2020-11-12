@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import os
-import sysz
+import sys
 
 if __name__ == '__main__':
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'djecommerce.settings.development')
