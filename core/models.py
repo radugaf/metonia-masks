@@ -13,9 +13,9 @@ CATEGORY_CHOICES = (
 )
 
 LABEL_CHOICES = (
-    ('P', 'primary'),
-    ('S', 'secondary'),
-    ('D', 'danger')
+    ('P', 'Special Offer'),
+    ('S', 'Limited Edition'),
+    ('D', 'New Collection')
 )
 
 ADDRESS_CHOICES = (
@@ -41,8 +41,14 @@ class Item(models.Model):
     category = models.CharField(choices=CATEGORY_CHOICES, max_length=2)
     label = models.CharField(choices=LABEL_CHOICES, max_length=1)
     slug = models.SlugField()
-    description = models.TextField()
+    description = models.TextField(max_length=150)
+
+    # Images
     image = models.ImageField()
+    image_fata = models.ImageField(null=True, blank=True)
+    image_interior = models.ImageField(null=True, blank=True)
+    image_lateral1 = models.ImageField(null=True, blank=True)
+    image_lateral2 = models.ImageField(null=True, blank=True)
 
     def __str__(self):
         return self.title

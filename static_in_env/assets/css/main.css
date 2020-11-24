@@ -11,7 +11,7 @@ INDEX:
     11 - Layout - Footer
     12 - Layout - Sidebar
 
-    20 - Components - Navigation
+    20 - Components - Navigatio
     21 - Components - Mini Cart
     22 - Components - Button
     23 - Components - Slider
@@ -30,7 +30,7 @@ INDEX:
     36 - Components - Animation
 
     40 - Pages - About
-    41 - Pages - 404 
+    41 - Pages - 404
     42 - Pages - Shop
     43 - Pages - Single Product
     44 - Pages - Checkout
@@ -75,13 +75,13 @@ h4,
 h5,
 h6 {
   font-weight: 500;
-  color: #ffffff;
+  color: #000;
   font-family: "Prata", sans-serif;
 }
 
 p {
   font-size: 1.5rem;
-  color: #afafaf;
+  color: #000000;
   font-weight: 400;
   line-height: 1.6;
 }
@@ -174,7 +174,7 @@ button {
   font-size: 4.8rem;
   line-height: 1;
   display: block;
-  color: #a8741a;
+  color: #b76e79;
   margin-bottom: 1rem;
   text-transform: uppercase;
 }
@@ -206,7 +206,7 @@ button {
 }
 
 .heading-big {
-  color: #a8741a;
+  color: #b76e79;
   font-size: 6rem;
   line-height: 1;
   margin-bottom: 1rem;
@@ -603,7 +603,7 @@ Quantity
   padding-right: 1rem;
 }
 .quantity-input {
-  background-color: #2e2e2e;
+  background-color: #ffffff;
   width: 5rem;
   height: 5rem;
   font-size: 1.6rem;
@@ -698,7 +698,7 @@ Quantity
 .border-bottom,
 .border-left,
 .border-right {
-  border-color: #2d2d2d !important;
+  border-color: white !important;
 }
 
 .tweet {
@@ -781,7 +781,7 @@ Bootstrap Dropdown
   left: auto !important;
   min-width: 16rem;
   z-index: 99999999;
-  background: #343434;
+  background: #ffffff;
 }
 
 .dropdown-toggle {
@@ -791,7 +791,7 @@ Bootstrap Dropdown
   color: #ffffff;
 }
 .dropdown-toggle:not([href]):not([tabindex]) {
-  color: #ffffff;
+  color: #000000;
 }
 .dropdown-toggle:after {
   display: none;
@@ -833,7 +833,7 @@ Bootstrap Dropdown
   display: block;
   white-space: unset;
   width: inherit;
-  color: #ffffff;
+  color: #000000;
 }
 .dropdown-item:not(:last-child) {
   background: url(../img/others/line2.png) bottom center no-repeat;
@@ -3165,7 +3165,7 @@ button,
 .header-top {
   padding-top: 0.8rem;
   padding-bottom: 0.8rem;
-  border-bottom: 1px solid #2d2d2d;
+  border-bottom: 1px solid #800020;
 }
 @media (max-width: 61.94em) {
   .header-top-nav {
@@ -3324,7 +3324,7 @@ button,
 
 .header-middle {
   padding: 3.6rem 0;
-  border-bottom: 1px solid #2d2d2d;
+  border-bottom: 1px solid #800020;
 }
 @media (max-width: 61.94em) {
   .header-middle {
@@ -3616,7 +3616,7 @@ button,
 }
 
 .header-bottom {
-  border-bottom: 1px solid #2d2d2d;
+  border-bottom: 1px solid #800020;
 }
 
 .contact-info {
@@ -3655,7 +3655,7 @@ button,
   width: 100%;
   z-index: 999999;
   margin: 0;
-  background-color: #242424;
+  background-color: #ffffff;
   -webkit-animation: fadeInDown 0.8s ease-in-out;
   -moz-animation: fadeInDown 0.8s ease-in-out;
   -ms-animation: fadeInDown 0.8s ease-in-out;
@@ -4228,7 +4228,7 @@ button,
 }
 .mainmenu__item > a {
   padding: 2rem 2.2rem;
-  color: #fff;
+  color: #000000;
   font-size: 1.8rem;
   line-height: 2.5rem;
   text-transform: capitalize;
@@ -4739,7 +4739,7 @@ Vertical Menu
 }
 .mini-cart__icon {
   font-size: 2rem;
-  color: #fff;
+  color: #000000;
   display: inline-block;
   line-height: 1.2;
   border-right: 1px solid #323232;
@@ -4756,7 +4756,7 @@ Vertical Menu
   text-align: center;
   margin-top: -13px;
   padding: 0;
-  background: #a8741a;
+  background: #800020;
   border-radius: 50%;
   color: #fff;
 }
@@ -4987,14 +4987,14 @@ Vertical Menu
 .btn-bordered {
   background: none;
   font-size: 1.3rem;
-  color: #e8e8e7;
+  color: #000000;
   line-height: 46px;
   text-transform: uppercase;
   font-weight: 500;
   display: inline-block;
   vertical-align: top;
   padding: 0 45px;
-  border: 2px solid #a8741a;
+  border: 2px solid #800020;
   border-radius: 3px;
 }
 .btn-medium {
@@ -5929,7 +5929,7 @@ Nice Select
   transition: all 0.3s ease 0s;
 }
 .product-price-wrapper > span {
-  color: #a8741a;
+  color: #800020;
   margin: 0 2px;
   font-size: 1.8rem;
   font-weight: 500;
@@ -5968,7 +5968,7 @@ Nice Select
   min-width: 3.5rem;
   min-height: 3.5rem;
   line-height: 3.5rem;
-  background-color: #2e2e2e;
+  background-color: #800020;
   text-align: center;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -6002,7 +6002,7 @@ Nice Select
 .mirora-product {
   padding: 1.5rem;
   margin: 8px 4px 0;
-  background: #242424;
+  background: #ffffff;
   border-radius: 4px;
   position: relative;
   text-align: left;
@@ -6040,7 +6040,7 @@ Nice Select
   padding: 0 1rem 2rem;
   border-radius: 0px 0px 4px 4px;
   margin: 0 -1.5rem;
-  background: #242424;
+  background: #ffffff;
 }
 @media (max-width: 61.94em) {
   .mirora_product_action {
@@ -6312,7 +6312,7 @@ Quick View Modal
   max-width: 95%;
   width: 95%;
   margin: 75px auto 50px;
-  background: #242424;
+  background: #ffffff;
 }
 @media (max-width: 61.94em) {
   .product-modal .modal-dialog {
@@ -6496,7 +6496,6 @@ Quick View Modal
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
   border-radius: 50%;
-  background-color: #2f2f2f;
   color: #afafaf;
   font-size: 1.2rem;
   -webkit-transition: color 0.4s ease;
@@ -6518,7 +6517,7 @@ Quick View Modal
 
 .social__link {
   display: block;
-  color: #838383;
+  color: red;
   font-size: 1.8rem;
 }
 .social__link.facebook:hover {
@@ -6959,12 +6958,13 @@ User Dashboard tab
 }
 
 .banner-bg-1 {
-  background: url(../img/banner/img-middle-mirora1.jpg) no-repeat scroll
+  background: url(../img/banner/pattern-spate.jpg) no-repeat scroll
     center/cover;
+
 }
 
 .banner-bg-2 {
-  background: url(../img/banner/img-middle-mirora4.jpg) no-repeat scroll
+  background: url(../img/banner/banner2.jpg) no-repeat scroll
     center/cover;
 }
 
@@ -7453,7 +7453,7 @@ User Dashboard tab
   white-space: -moz-nowrap;
   white-space: nowrap;
   border-bottom: 0;
-  color: #e8e8e7;
+  color: #000000;
   text-transform: uppercase;
   font-weight: 500;
   padding: 2rem 1.5rem;
@@ -7477,7 +7477,7 @@ User Dashboard tab
 }
 .table td h3 a {
   font-weight: 500;
-  color: #afafaf;
+  color: #000000;
 }
 .table td a.delete {
   color: #afafaf;
@@ -7492,7 +7492,7 @@ User Dashboard tab
 .table td.cart-product-price {
   font-size: 1.8rem;
   line-height: 1.6;
-  color: #e8e8e7;
+  color: #000000;
 }
 .table td.cart-product-price strong {
   font-weight: 500;
@@ -7516,7 +7516,7 @@ User Dashboard tab
 .cart-calculator-table td {
   border: none;
   padding: 1rem 0;
-  color: #afafaf;
+  color: #000000;
   vertical-align: top;
   font-family: "Prata", sans-serif;
 }
@@ -9297,7 +9297,7 @@ User Dashboard tab
 .product-details-price-wrapper > span,
 .product-details-action-bottom a:hover,
 .product-details-slider .slick-btn:hover {
-  color: #a8741a;
+  color: #800020;
 }
 
 .scroll-to-top,
@@ -9315,14 +9315,14 @@ User Dashboard tab
 .product-action a:hover,
 .comment .reply:hover,
 .primary-bg {
-  background-color: #a8741a;
+  background-color: #800020;
 }
 
 .corporate-2:hover i,
 .sidebar-widget .widget_conent .tagcloud a:hover,
 .product-tab__link.nav-link.active,
 .product-details-slider .slick-btn:hover {
-  border-color: #a8741a;
+  border-color: #800020;
 }
 
 .scroll-to-top,
@@ -9347,7 +9347,7 @@ User Dashboard tab
 .product-details-action-bottom a,
 .product-details-tab-link.active,
 .product-details-tab-link:hover {
-  color: #ffffff;
+  color: #000000;
 }
 
 .breadcrumb-area .breadcrumb li:not(:last-child):after,
@@ -9368,7 +9368,7 @@ User Dashboard tab
 .newsletter-form-2 input[type="email"],
 .newsletter-form-2 button,
 .popup-subscribe-form input[type="email"],
-.product-action a,
+
 .refine-search .cat-list a,
 .nav-top .slick-btn,
 .accordion__link,
@@ -9381,11 +9381,15 @@ User Dashboard tab
 .product-details-content .ratings-wrap a,
 .product-details-price-wrapper > span.product-price-old,
 .product-details-slider .slick-btn {
-  color: #afafaf;
+  color: #000000;
+}
+.product-action a {
+  color: white;
 }
 
 .section-title h2 {
-  background-color: #242424;
+  background-color: #ffffff;
+  color: #000000;
 }
 
 .brand-bg {
@@ -9433,7 +9437,7 @@ User Dashboard tab
 }
 
 .bg--2 {
-  background-color: #343434;
+  background-color: #ffffff;
 }
 
 .bg--white {
@@ -9485,7 +9489,7 @@ User Dashboard tab
 }
 
 .bg--gray-2 {
-  background-color: #f3f4f8;
+  background-color: #000000;
 }
 
 .bg--gray-3 {
@@ -9505,11 +9509,11 @@ User Dashboard tab
 }
 
 .bg--dark-3 {
-  background-color: #2e2e2e;
+  background-color: #ffffff;
 }
 
 .bg--dark-4 {
-  background-color: #212121;
+  background-color: #ffffff;
 }
 
 .bg--zircon-light {
