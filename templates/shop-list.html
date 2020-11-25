@@ -15,18 +15,9 @@
                   <a class="grid-3" data-target="gridview-3" data-toggle="tooltip" data-placement="top" title="3">3</a>
                   <a class="grid-4" data-target="gridview-4" data-toggle="tooltip" data-placement="top" title="4">4</a>
                   <a class="grid-5" data-target="gridview-5" data-toggle="tooltip" data-placement="top" title="5">5</a>
-                  <a class="active list" data-target="listview" data-toggle="tooltip" data-placement="top" title="5">List</a>
+                  <a class="activate list" data-target="listview" data-toggle="tooltip" data-placement="top" title="5">List</a>
                 </div>
-                <div class="product-short">
-                  <label class="select-label">Short By:</label>
-                  <select class="short-select nice-select">
-                    <option value="1">Relevance</option>
-                    <option value="2">Name, A to Z</option>
-                    <option value="3">Name, Z to A</option>
-                    <option value="4">Price, low to high</option>
-                    <option value="5">Price, high to low</option>
-                  </select>
-                </div>
+
               </div>
               <!-- Shop Toolbar End -->
             </div>
@@ -38,13 +29,16 @@
             <div class="col-xl-3 col-lg-4 col-md-6 col-12">
               <div class="mirora-product mb-md--10">
                 <div class="product-img">
-                  <img src="assets/img/products/9-450x450.jpg" alt="Product" class="primary-image" />
-                  <img src="assets/img/products/9-9-450x450.jpg" alt="Product" class="secondary-image" />
+{% if item.image %}
+                  <img src="{{ item.image.url }}" alt="Product" class="primary-image" />
+{% endif %}
+{% if item.image_lateral1 %}
+                  <img src="{{ item.image.url }}" alt="Product" class="secondary-image" />
+{% endif %}
                   <div class="product-img-overlay">
                     <span class="product-label discount">
                       {{ item.get_label_display }}
                     </span>
-                    <a data-toggle="modal" data-target="#productModal" class="btn btn-transparent btn-fullwidth btn-medium btn-style-1">Quick View</a>
                   </div>
                 </div>
                 <div class="product-content text-center">
@@ -53,43 +47,34 @@
                     <a href="{{ item.get_absolute_url }}">{{ item.title }}</a>
                   </h4>
                   <div class="product-price-wrapper">
-                    <span class="money">{{ item.price }}</span>
+                    <span class="money">{{ item.price }} LEI</span>
                   </div>
                 </div>
                 <div class="mirora_product_action text-center position-absolute">
-                  <div class="product-rating">
-                    <span>
-                      <i class="fa fa-star theme-star"></i>
-                      <i class="fa fa-star theme-star"></i>
-                      <i class="fa fa-star theme-star"></i>
-                      <i class="fa fa-star theme-star"></i>
-                      <i class="fa fa-star"></i>
-                    </span>
-                  </div>
                   <p>
-                    It is a long established fact that a reader will be
-                    distracted by the readable content...
+                    {{ item.description }}
                   </p>
+
                   <div class="product-action">
-                    <a class="same-action" href="wishlist.html" title="wishlist">
-                      <i class="fa fa-heart-o"></i>
-                    </a>
+
                     <a class="add_cart cart-item action-cart" href="cart.html" title="wishlist"><span>Add to cart</span></a>
-                    <a class="same-action compare-mrg" data-toggle="modal" data-target="#productModal" href="compare.html">
-                      <i class="fa fa-sliders fa-rotate-90"></i>
-                    </a>
+
                   </div>
                 </div>
               </div>
               <div class="mirora-product-list">
                 <div class="product-img">
-                  <img src="assets/img/products/9-450x450.jpg" alt="Product" class="primary-image" />
-                  <img src="assets/img/products/9-9-450x450.jpg" alt="Product" class="secondary-image" />
+{% if item.image %}
+                  <img src="{{ item.image.url }}" alt="Product" class="primary-image" />
+{% endif %}
+{% if item.image_lateral1 %}
+                  <img src="{{ item.image_lateral1.url }}" alt="Product" class="secondary-image" />
+{% endif %}
                   <div class="product-img-overlay">
                     <span class="product-label discount">
                       {{ item.get_label_display }}
                     </span>
-                    <a data-toggle="modal" data-target="#productModal" class="btn btn-transparent btn-fullwidth btn-medium btn-style-1">Quick View</a>
+                    <!-- <a data-toggle="modal" data-target="#productModal" class="btn btn-transparent btn-fullwidth btn-medium btn-style-1">Quick View</a> -->
                   </div>
                 </div>
                 <div class="product-content">
@@ -97,30 +82,17 @@
                   <h4>
                     <a href="{{ item.get_absolute_url }}">{{ item.title }}</a>
                   </h4>
-                  <div class="product-rating">
-                    <span>
-                      <i class="fa fa-star theme-star"></i>
-                      <i class="fa fa-star theme-star"></i>
-                      <i class="fa fa-star theme-star"></i>
-                      <i class="fa fa-star theme-star"></i>
-                      <i class="fa fa-star"></i>
-                    </span>
-                  </div>
+
                   <p class="product-desc">
                     It is a long established fact that a reader will be
                     distracted by the readable content...
                   </p>
                   <div class="product-price-wrapper">
-                    <span class="money">{{ item.price }}</span>
+                    <span class="money">{{ item.price }} LEI</span>
 
                     <div class="product-action">
-                      <a class="add_cart cart-item action-cart" href="cart.html" title="wishlist"><span>Add to cart</span></a>
-                      <a class="same-action" href="wishlist.html" title="wishlist">
-                        <i class="fa fa-heart-o"></i>
-                      </a>
-                      <a class="same-action compare-mrg" data-toggle="modal" data-target="#productModal" href="compare.html">
-                        <i class="fa fa-sliders fa-rotate-90"></i>
-                      </a>
+                      <a class="{{ item.image.url}}" href="cart.html" title="wishlist"><span>Add to cart</span></a>
+
                     </div>
                   </div>
                 </div>
@@ -139,132 +111,6 @@
   <!-- Scroll To Top Start -->
   <a class="scroll-to-top" href=""><i class="fa fa-angle-double-up"></i></a>
   <!-- Scroll To Top End -->
-
-  <!-- Modal Start -->
-  <div class="modal fade product-modal" id="productModal" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-body">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">Close</span>
-          </button>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-5 col-md-6 mb-sm--20">
-                <div class="tab-content product-thumb-large">
-                  <div id="thumb1" class="tab-pane active show fade">
-                    <img src="assets/img/products/1-1-600x600.jpg" alt="product thumb" />
-                  </div>
-                  <div id="thumb2" class="tab-pane fade">
-                    <img src="assets/img/products/2-600x600.jpg" alt="product thumb" />
-                  </div>
-                  <div id="thumb3" class="tab-pane fade">
-                    <img src="assets/img/products/10-600x600.jpg" alt="product thumb" />
-                  </div>
-                  <div id="thumb4" class="tab-pane fade">
-                    <img src="assets/img/products/11-600x600.jpg" alt="product thumb" />
-                  </div>
-                  <div id="thumb5" class="tab-pane fade">
-                    <img src="assets/img/products/12-600x600.jpg" alt="product thumb" />
-                  </div>
-                  <div id="thumb6" class="tab-pane fade">
-                    <img src="assets/img/products/13-600x600.jpg" alt="product thumb" />
-                  </div>
-                </div>
-                <div class="product-thumbnail">
-                  <div class="thumb-menu" id="modal-thumbmenu">
-                    <div class="thumb-menu-item">
-                      <a href="#thumb1" data-toggle="tab" class="nav-link active">
-                        <img src="assets/img/products/1-1-450x450.jpg" alt="product thumb" />
-                      </a>
-                    </div>
-                    <div class="thumb-menu-item">
-                      <a href="#thumb2" data-toggle="tab" class="nav-link">
-                        <img src="assets/img/products/2-2-450x450.jpg" alt="product thumb" />
-                      </a>
-                    </div>
-                    <div class="thumb-menu-item">
-                      <a href="#thumb3" data-toggle="tab" class="nav-link">
-                        <img src="assets/img/products/10-10-450x450.jpg" alt="product thumb" />
-                      </a>
-                    </div>
-                    <div class="thumb-menu-item">
-                      <a href="#thumb4" data-toggle="tab" class="nav-link">
-                        <img src="assets/img/products/11-11-450x450.jpg" alt="product thumb" />
-                      </a>
-                    </div>
-                    <div class="thumb-menu-item">
-                      <a href="#thumb5" data-toggle="tab" class="nav-link">
-                        <img src="assets/img/products/12-12-450x450.jpg" alt="product thumb" />
-                      </a>
-                    </div>
-                    <div class="thumb-menu-item">
-                      <a href="#thumb6" data-toggle="tab" class="nav-link">
-                        <img src="assets/img/products/13-13-450x450.jpg" alt="product thumb" />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-lg-7 col-md-6">
-                <div class="modal-box product">
-                  <h3 class="product-title">Acer Aspire E 15</h3>
-                  <div class="ratings mb--20">
-                    <i class="fa fa-star rated"></i>
-                    <i class="fa fa-star rated"></i>
-                    <i class="fa fa-star rated"></i>
-                    <i class="fa fa-star rated"></i>
-                    <i class="fa fa-star"></i>
-                  </div>
-                  <ul class="product-detail-list list-unstyled mb--20">
-                    <li>Brand: <a href="">Apple</a></li>
-                    <li>Product Code: Watches</li>
-                    <li>Reward Points: 600</li>
-                    <li>Availability: In Stock</li>
-                  </ul>
-                  <div class="product-price border-bottom pb--20 mb--20">
-                    <span class="regular-price">$100.50</span>
-                    <span class="sale-price">$98.98</span>
-                  </div>
-                  <div class="product-options mb--20">
-                    <h3>Available Options</h3>
-                    <div class="form-group">
-                      <label><sup>*</sup>Color Switch</label>
-                      <select>
-                        <option>--- Please Select ---</option>
-                        <option>Black</option>
-                        <option>Blue</option>
-                      </select>
-                    </div>
-                  </div>
-                  <div class="product-action-wrapper mb--20">
-                    <div class="product-action-top d-flex align-items-center mb--20">
-                      <div class="quantity">
-                        <span>Qty: </span>
-                        <input type="number" class="quantity-input" name="qty" id="qty" value="1" min="1" />
-                      </div>
-                      <button type="button" class="btn btn-medium btn-style-2 add-to-cart">
-                        Add To Cart
-                      </button>
-                    </div>
-                    <div class="product-action-bottom">
-                      <a href="wishlist.html">+Add to wishlist</a>
-                      <a href="compare.html">+Add to compare</a>
-                    </div>
-                  </div>
-                  <p class="product-tags">
-                    Tags: <a href="shop.html">Sport</a>,
-                    <a href="shop.html">Luxury</a>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Modal End -->
 
   {% endblock content %}
 </div>

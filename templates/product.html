@@ -1,6 +1,4 @@
-{% extends "base.html" %}
-
-{% block content %}
+{% extends "base.html" %} {% block content %}
 <!-- Main Content Wrapper Start -->
 <div class="main-content-wrapper">
   <div class="single-products-area section-padding section-md-padding">
@@ -11,62 +9,98 @@
           <div class="col-lg-6">
             <!-- Tab Content Start -->
             <div class="tab-content product-details-thumb-large" id="myTabContent-3">
+              {% if item.image %}
               <div class="tab-pane fade show active" id="product-large-one">
                 <div class="product-details-img easyzoom">
-                  <a class="popup-btn" href="assets/img/products/3-900x900.jpg">
-                    <img src="assets/img/products/3-900x900.jpg" alt="product" />
+                  <a class="popup-btn" href="{{ item.image.url }}">
+                    <img src="{{ item.image.url }}" alt="product" />
                   </a>
                 </div>
               </div>
+              {% endif %}
+
+              {% if item.image_fata %}
               <div class="tab-pane fade" id="product-large-two">
                 <div class="product-details-img easyzoom">
-                  <a class="popup-btn" href="assets/img/products/4-900x900.jpg">
-                    <img src="assets/img/products/4-900x900.jpg" alt="product" />
+                  <a class="popup-btn" href="{{ item.image_fata.url }}">
+                    <img src="{{ item.image_fata.url }}" alt="product" />
                   </a>
                 </div>
               </div>
+              {% endif %}
+
+              {% if item.image_lateral1 %}
               <div class="tab-pane fade" id="product-large-three">
                 <div class="product-details-img easyzoom">
-                  <a class="popup-btn" href="assets/img/products/5-900x900.jpg">
-                    <img src="assets/img/products/5-900x900.jpg" alt="product" />
+                  <a class="popup-btn" href="{{ item.image_lateral1.url }}">
+                    <img src="{{ item.image_lateral1.url }}" alt="product" />
                   </a>
                 </div>
               </div>
+              {% endif %}
+
+              {% if item.image_lateral2 %}
               <div class="tab-pane fade" id="product-large-four">
                 <div class="product-details-img easyzoom">
-                  <a class="popup-btn" href="assets/img/products/6-900x900.jpg">
-                    <img src="assets/img/products/6-900x900.jpg" alt="product" />
+                  <a class="popup-btn" href="{{ item.image_lateral2.url }}">
+                    <img src="{{ item.image_lateral2.url }}" alt="product" />
                   </a>
                 </div>
               </div>
+              {% endif %}
+
+              {% if item.image_interior %}
               <div class="tab-pane fade" id="product-large-five">
                 <div class="product-details-img easyzoom">
-                  <a class="popup-btn" href="assets/img/products/10-900x900.jpg">
-                    <img src="assets/img/products/10-900x900.jpg" alt="product" />
+                  <a class="popup-btn" href="{{ item.image_interior.url }}">
+                    <img src="{{ item.image_interior.url }}" alt="product" />
                   </a>
                 </div>
               </div>
+              {% endif %}
             </div>
             <!-- Tab Content End -->
 
             <!-- Product Thumbnail Carousel Start -->
             <div class="product-details-thumbnail">
               <div class="thumb-menu product-details-thumb-menu nav-vertical-center" id="thumbmenu-horizontal">
+
+                {% if item.image_fata %}
                 <div class="thumb-menu-item">
                   <a href="#product-large-one" data-toggle="tab" class="nav-link active">
-                    <img src="assets/img/products/3-450x450.jpg" alt="product thumb" />
+                    <img src="{{ item.image_fata.url }}" alt="product thumb" />
                   </a>
                 </div>
+                {% endif %}
+
+                {% if item.image_lateral1 %}
                 <div class="thumb-menu-item">
                   <a href="#product-large-two" data-toggle="tab" class="nav-link">
-                    <img src="assets/img/products/4-450x450.jpg" alt="product thumb" />
+                    <img src="{{ item.image_lateral1.url }}" alt="product thumb" />
                   </a>
                 </div>
+                {% endif %}
 
+                {% if item.image_lateral2 %}
+                <div class="thumb-menu-item">
+                  <a href="#product-large-three" data-toggle="tab" class="nav-link">
+                    <img src="{{ item.image_lateral2.url }}" alt="product thumb" />
+                  </a>
+                </div>
+                {% endif %}
+
+                {% if item.image_itnerior %}
+                <div class="thumb-menu-item">
+                  <a href="#product-large-three" data-toggle="tab" class="nav-link">
+                    <img src="{{ item.image_interior.url }}" alt="product thumb" />
+                  </a>
+                </div>
+                {% endif %}
               </div>
             </div>
             <!-- Product Thumbnail Carousel End -->
           </div>
+
           <div class="col-lg-6">
             <!-- Single Product Content Start -->
             <div class="product-details-content">
@@ -80,12 +114,12 @@
                   {% if object.discount_price %}
                   <span class="product-price-old">
                     <span class="money">
-                      <del>{{ object.price }}</del>
+                      <del>{{ object.price }} LEI</del>
                     </span>
                   </span>
-                  <span class="money">{{ object.discount_price }}</span>
+                  <span class="money">{{ object.discount_price }} LEI</span>
                   {% else %}
-                  <span class="money">{{ object.price }}</span>
+                  <span class="money">{{ object.price }} LEI</span>
                   {% endif %}
                 </div>
               </div>
@@ -114,28 +148,21 @@
               <li class="nav-item product-details-tab-item">
                 <a class="nav-link product-details-tab-link active" id="nav-desc-tab" data-toggle="tab" href="#nav-desc" role="tab" aria-controls="nav-desc" aria-selected="true">Description</a>
               </li>
-
             </ul>
             <div class="product-details-tab-content tab-content">
               <div class="tab-pane fade show active" id="nav-desc" role="tabpanel" aria-labelledby="nav-desc-tab">
-
                 <p class="product-details-description">
                   {{ object.description }}
                 </p>
               </div>
-
-
             </div>
           </div>
         </div>
       </section>
       <!-- Single Product Tab End -->
-
-
     </div>
   </div>
 </div>
 <!-- Main Content Wrapper End -->
-
 
 {% endblock content %}

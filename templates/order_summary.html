@@ -28,7 +28,7 @@
                       <th scope="row">{{ forloop.counter }}</th>
 
                       <td class="wide-column">
-                        <h3><a href="product-details.html">{{ order_item.item.title }}</a></h3>
+                        <h3>{{ order_item.item.title }}</h3>
                       </td>
 
                       <td class="cart-product-price"><strong>{{ order_item.item.price }} LEI</strong></td>
@@ -36,7 +36,7 @@
                       <td>
 
                         <a href="{% url 'core:remove-single-item-from-cart' order_item.item.slug %}"><i class="fas fa-minus mr-2"></i></a>
-                        {{ order_item.quantity }}
+                      {{ order_item.quantity }}
                         <a href="{% url 'core:add-to-cart' order_item.item.slug %}"><i class="fas fa-plus ml-2"></i></a>
                       </td>
 
