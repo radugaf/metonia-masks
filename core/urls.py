@@ -11,7 +11,12 @@ from .views import (
     AddCouponView,
     RequestRefundView,
     AboutView,
-    ShopListView
+    ShopListView,
+    Terms,
+    Privacy,
+    Refunds,
+    SellWithUs,
+    Gallery
 )
 from . import views
 app_name = 'core'
@@ -31,4 +36,12 @@ urlpatterns = [
     path('about/', AboutView.as_view(), name='about'),
     path('about.html', views.contact, name='contact'),
     path('shop-list/', ShopListView.as_view(), name='shop-list'),
+
+    # Extras
+    path('terms/', Terms.as_view(), name='terms'),
+    path('privacy/', Privacy.as_view(), name='privacy'),
+    path('refunds/', Refunds.as_view(), name='refunds'),
+    path('sellwithus/', SellWithUs.as_view(), name='sellwithus'),
+    path('gallery/', Gallery.as_view(), name='gallery' )
+
 ]

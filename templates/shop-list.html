@@ -29,12 +29,12 @@
             <div class="col-xl-3 col-lg-4 col-md-6 col-12">
               <div class="mirora-product mb-md--10">
                 <div class="product-img">
-{% if item.image %}
+                  {% if item.image %}
                   <img src="{{ item.image.url }}" alt="Product" class="primary-image" />
-{% endif %}
-{% if item.image_lateral1 %}
-                  <img src="{{ item.image.url }}" alt="Product" class="secondary-image" />
-{% endif %}
+                  {% endif %}
+                  {% if item.image_lateral1 %}
+                  <img src="{{ item.image_lateral1e.url }}" alt="Product" class="secondary-image" />
+                  {% endif %}
                   <div class="product-img-overlay">
                     <span class="product-label discount">
                       {{ item.get_label_display }}
@@ -56,24 +56,24 @@
                   </p>
 
                   <div class="product-action">
-
-                    <a class="add_cart cart-item action-cart" href="cart.html" title="wishlist"><span>Add to cart</span></a>
-
+                    <a class="add_cart cart-item action-cart" href="{{ item.get_add_to_cart_url }}" title="wishlist"><span>Add to cart</span></a>
                   </div>
                 </div>
               </div>
               <div class="mirora-product-list">
                 <div class="product-img">
-{% if item.image %}
+                  {% if item.image %}
                   <img src="{{ item.image.url }}" alt="Product" class="primary-image" />
-{% endif %}
-{% if item.image_lateral1 %}
+                  {% endif %}
+                  {% if item.image_lateral1 %}
                   <img src="{{ item.image_lateral1.url }}" alt="Product" class="secondary-image" />
-{% endif %}
+                  {% endif %}
                   <div class="product-img-overlay">
+{% if item.label %}
                     <span class="product-label discount">
                       {{ item.get_label_display }}
                     </span>
+{% endif %}
                     <!-- <a data-toggle="modal" data-target="#productModal" class="btn btn-transparent btn-fullwidth btn-medium btn-style-1">Quick View</a> -->
                   </div>
                 </div>
@@ -84,14 +84,13 @@
                   </h4>
 
                   <p class="product-desc">
-                    It is a long established fact that a reader will be
-                    distracted by the readable content...
+                    {{ item.description }}
                   </p>
                   <div class="product-price-wrapper">
                     <span class="money">{{ item.price }} LEI</span>
 
                     <div class="product-action">
-                      <a class="{{ item.image.url}}" href="cart.html" title="wishlist"><span>Add to cart</span></a>
+                      <a class="add_cart cart-item action-cart" href="{{ item.get_add_to_cart_url }}" title="wishlist"><span>Add to cart</span></a>
 
                     </div>
                   </div>

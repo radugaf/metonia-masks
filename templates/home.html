@@ -10,7 +10,7 @@
         <div class="container">
           <div class="row">
             <div class="col-12">
-              <img src="{% static 'assets/img/banner/banner2.jpeg' %}" />
+              <img src="{% static 'assets/img/banner/banner4.jpeg' %}" />
             </div>
           </div>
         </div>
@@ -58,23 +58,12 @@
                   {{ item.description }}
                 </p>
 
-                <!-- <div class="product-action">
-                  <a
-                    class="add_cart cart-item action-cart"
-                    href="{{ object.get_add_to_cart_url }}"
-                    title="wishlist"
-                  >
+                <div class="product-action">
+                  <a class="add_cart cart-item action-cart" href="{{ item.get_add_to_cart_url }}" title="wishlist">
                     <span>Add to cart</span>
                   </a>
-                  <a
-                    class="same-action compare-mrg"
-                    data-toggle="modal"
-                    data-target="#productModal"
-                    href="compare.html"
-                  >
-                    <i class="fa fa-sliders fa-rotate-90"></i>
-                  </a>
-                </div> -->
+
+                </div>
               </div>
             </div>
             {% endfor %}

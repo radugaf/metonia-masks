@@ -15,7 +15,8 @@ CATEGORY_CHOICES = (
 LABEL_CHOICES = (
     ('P', 'Special Offer'),
     ('S', 'Limited Edition'),
-    ('D', 'New Collection')
+    ('D', 'New Collection'),
+    ('N', 'Sold Out')
 )
 
 ADDRESS_CHOICES = (
@@ -39,7 +40,7 @@ class Item(models.Model):
     price = models.FloatField()
     discount_price = models.FloatField(blank=True, null=True)
     category = models.CharField(choices=CATEGORY_CHOICES, max_length=2)
-    label = models.CharField(choices=LABEL_CHOICES, max_length=1)
+    label = models.CharField(choices=LABEL_CHOICES, max_length=1, null=True, blank=True)
     slug = models.SlugField()
     description = models.TextField(max_length=150)
 
@@ -200,3 +201,22 @@ class Contact(models.Model):
 
     def __str__():
         return f"{slef.first_name} {self.last_name}"
+
+class Terms(models.Model):
+    title_terms = models.CharField(max_length=250)
+    content_terms = models.TextField()
+
+class Privacy(models.Model):
+    title_privacy = models.CharField(max_length=250)
+    content_privacy = models.TextField()
+
+class Refunds(models.Model):
+    title_refunds = models.CharField(max_length=250)
+    content_refunds = models.TextField()
+
+class SellWithUs(models.Model):
+    item_title = models.CharField(max_length=250)
+    item_description = models.TextField()
+
+class Gallery(models.Model):
+    gallery_title = models.CharField(max_length=250)

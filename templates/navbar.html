@@ -1,8 +1,6 @@
 {% load cart_template_tags %}
 {% load static %}
 
-
-
 <header class="header headery-style-1">
   <div class="header-top header-top-1">
     <div class="container">
@@ -20,7 +18,7 @@
               </a>
             </li>
             <li class="social__item">
-              <a href="http://facebook.com" class="social__link__facebook">
+              <a href="https://www.facebook.com/metanoiamasks" class="social__link__facebook">
                 <i class="fa fa-facebook"></i>
               </a>
             </li>
@@ -30,13 +28,12 @@
               </a>
             </li>
             <li class="social__item">
-              <a href="http://instagram.com" class="social__link__instagram">
+              <a href="https://www.instagram.com/metanoia_masks/" class="social__link__instagram">
                 <i class="fa fa-instagram"></i>
               </a>
             </li>
           </ul>
         </div>
-
 
         <div class="col-lg-4">
           <div class="header-top-nav d-flex justify-content-lg-end justify-content-center">
@@ -46,7 +43,6 @@
                   My Account
                   <i class="fa fa-angle-down"></i>
                 </a>
-
                 <div class="dropdown-menu" aria-labelledby="userID">
                   {% if request.user.is_authenticated %}
                   <a class="dropdown-item" href="{% url 'account_logout' %}">Log Out</a>
@@ -69,17 +65,11 @@
     <div class="container">
       <div class="row no-gutters align-items-center">
         <div class="col-md-5 col-sm-6 order-lg-1 order-2">
-          <div class="contact-info">
 
-            <p>
-              Email us <br />
-              Free Support: staysafe@metanoia-masks.ro
-            </p>
-          </div>
         </div>
         <div class="col-lg-2 col-12 order-lg-2 order-1 text-center">
           <a href="/" class="logo-box mb-md--30">
-            <img src="{% static 'assets/img/logo/logo2.jpeg' %}" alt="logo" />
+            <img src="{% static 'assets/img/logo/logo.jpeg' %}" alt="logo" />
           </a>
         </div>
         <div class="col-lg-5 col-md-7 col-sm-6 order-lg-3 order-3">
@@ -87,9 +77,9 @@
             <ul class="header-toolbar-icons">
               <li class="mini-cart-icon">
                 <div class="mini-cart mini-cart--1">
-                  <a class="mini-cart__dropdown-toggle bordered-icon" id="cartDropdown">
-                    <span class="mini-cart__count">0</span>
-                    <i class="icon_cart_alt mini-cart__icon"></i>
+                  <a class="mini-cart bordered-icon" href="{% url 'core:order-summary' %}" id="cartDropdown">
+                    <span class="mini-cart__count">{{ request.user|cart_item_count }}</span>
+                    <i class="icon_cart_alt mini-cart__icon" href="{% url 'core:order-summary' %}"></i>
                   </a>
                 </div>
               </li>
@@ -116,7 +106,7 @@
                 <a href="{% url 'core:about' %}" class="mainmenu__link">About Us</a>
               </li>
               <li class="mainmenu__item">
-                <a href="#" class="mainmenu__link">contact Us</a>
+                <a href="{% url 'core:sellwithus' %}" class="mainmenu__link">Sell with Us</a>
               </li>
             </ul>
           </nav>

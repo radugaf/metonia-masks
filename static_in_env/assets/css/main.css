@@ -5892,7 +5892,7 @@ Nice Select
 .product-label {
   font-weight: 400;
   text-align: center;
-  width: 100px;
+  width: 130px;
   text-transform: uppercase;
   font-size: 1.2rem;
   line-height: 2.3rem;
@@ -9334,7 +9334,7 @@ User Dashboard tab
 .footer a:hover,
 .mobile-menu .mean-bar .mean-nav > ul li a,
 .mobile-menu .mean-bar .mean-nav ul li a.mean-expand,
-.product-label,
+
 .product-content h4 a,
 .widget-product .product-title a,
 .product-modal .product-title,
@@ -9348,6 +9348,10 @@ User Dashboard tab
 .product-details-tab-link.active,
 .product-details-tab-link:hover {
   color: #000000;
+}
+
+.product-label {
+  color: #ffffff;
 }
 
 .breadcrumb-area .breadcrumb li:not(:last-child):after,

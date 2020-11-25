@@ -13,7 +13,7 @@ from django.utils import timezone
 from django.views.generic import ListView, DetailView, View
 
 from .forms import ContactForm, CheckoutForm, CouponForm, RefundForm, PaymentForm
-from .models import Item, OrderItem, Order, Address, Payment, Coupon, Refund, UserProfile
+from .models import Gallery, SellWithUs, Item, OrderItem, Order, Address, Payment, Coupon, Refund, UserProfile, Terms, Privacy, Refunds
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
@@ -373,6 +373,25 @@ class AboutView(ListView):
     model = Item
     template_name = "about.html"
 
+class Terms(ListView):
+    model = Terms
+    template_name = "terms.html"
+
+class Privacy(ListView):
+    model = Privacy
+    template_name = "privacy.html"
+
+class Refunds(ListView):
+    model = Refunds
+    template_name = "refunds.html"
+
+class SellWithUs(ListView):
+    model = SellWithUs
+    template_name = "sellwithus.html"
+
+class Gallery(ListView):
+    model = Gallery
+    template_name = "gallery.html"
 
 @login_required
 def add_to_cart(request, slug):
