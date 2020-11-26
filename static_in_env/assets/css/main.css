@@ -145,7 +145,7 @@ a:hover {
 }
 
 a:not([href]):not([tabindex]):hover {
-  color: #a8741a !important;
+  color: #800020 !important;
 }
 
 a,
@@ -237,7 +237,7 @@ button {
   text-transform: uppercase;
   font-size: 3rem;
   margin-bottom: 0;
-  color: #ffffff;
+  color: #000000;
   line-height: 1.35;
 }
 @media (max-width: 120em) {
@@ -5418,7 +5418,8 @@ Form
   height: 4.5rem;
 }
 .form__input--3 {
-  background-color: #333333;
+  background-color: #ffffff;
+  border-color: #000000;
 }
 .form__input:focus {
   border-color: #555;
@@ -7033,7 +7034,7 @@ User Dashboard tab
 .accordion__single.card {
   border: 1px solid #2d2d2d !important;
   margin-bottom: 1rem;
-  background-color: #343434;
+  background-color: #ffffff;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   -ms-border-radius: 0;
@@ -7048,7 +7049,7 @@ User Dashboard tab
   border-radius: 0;
 }
 .accordion__single.card.open {
-  border-color: #a8741a !important;
+  border-color: #800020 !important;
 }
 
 .accordion__header {
@@ -8286,7 +8287,7 @@ User Dashboard tab
 *****************************/
 .about-text p,
 .skill-progress p {
-  color: #afafaf;
+  color: #000000;
 }
 
 @media (max-width: 74.9375em) {

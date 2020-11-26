@@ -4,34 +4,76 @@
 
 <!-- Main Wrapper Start -->
 <div class="main-content-wrapper">
-  <div class="about-area bg--dark-3 mt--40 mt-sm--30">
-    <div class="container-fluid p-0">
-      <div class="row no-gutters align-items-center">
-        <div class="col-xl-6">
-          <div class="img-box text-center">
-            <img src="{% static 'assets/img/about/about-us-img1.jpg' %}" alt="about">
-          </div>
-        </div>
-        <div class="col-xl-6">
-          <div class="row">
-            <div class="col-10 offset-1">
-              <div class="about-text text-center">
-                <h2 class="heading-secondary mb--40 mb-sm--30">
-                  About Us
-                </h2>
-                <p class="mb--40 mb-sm--30">
-                  Un duo mama-fiica cu o dragoste aparte pentru piese vintage care rezista trecerii timpului. Fiecare piesa creata cu drag raspunde unei singure intrebari: noi am purta-o cu drag?</p>
-                <div class="about-btn-group text-center">
-                  <a href="/" class="btn btn-style-3">view our work</a>
-                </div>
+
+  <!-- Contact Area Start -->
+  <div class="contact-area ptb--80 ptb-md--60">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="heading-secondary border-bottom mb--30">Haide sa incepem o colaborare!</h2>
+          <form class="form form--contact" id="contact-form" action="mail.php">
+            <div class="form-row mb--20">
+              <div class="col-md-2 text-md-right">
+                <label for="contact_name">Nume Complet <sup>*</sup></label>
+              </div>
+              <div class="col-md-10">
+                <input type="text" name="contact_name" id="contact_name" class="form__input form__input--3">
               </div>
             </div>
-          </div>
+            <div class="form-row mb--20">
+              <div class="col-md-2 text-md-right">
+                <label for="contact_name">Your Email <sup>*</sup></label>
+              </div>
+              <div class="col-md-10">
+                <input type="email" name="contact_email" id="contact_email" class="form__input form__input--3">
+              </div>
+            </div>
+            <div class="form-row mb--20">
+              <div class="col-md-2 text-md-right">
+                <label for="contact_name">Phone<sup>*</sup></label>
+              </div>
+              <div class="col-md-10">
+                <input type="text" name="contact_name" id="contact_name" class="form__input form__input--3">
+              </div>
+            </div>
+            <div class="form-row mb--20">
+              <div class="col-md-2 text-md-right">
+                <label for="contact_name">Descriere Produs<sup>*</sup></label>
+              </div>
+              <div class="col-md-10">
+                <textarea name="contact_message" id="contact_message" class="form__input form__input--3 form__input--textarea"></textarea>
+              </div>
+            </div>
+            <div class="form-row mb--20">
+              <div class="col-md-2 text-md-right">
+                <label for="contact_name">Stare Produs<sup>*</sup></label>
+              </div>
+              <div class="col-md-10">
+                <input type="text" name="contact_name" id="contact_name" class="form__input form__input--3">
+              </div>
+            </div>
+            <div class="form-row mb--20">
+              <div class="col-md-2 text-md-right">
+                <label for="contact_name">Pret Produs<sup>*</sup></label>
+              </div>
+              <div class="col-md-10">
+                <input type="text" name="contact_name" id="contact_name" class="form__input form__input--3">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="col-12 text-right">
+                <button type="submit" class="form__submit">Send Email</button>
+              </div>
+            </div>
+            <div class="form__output"></div>
+          </form>
         </div>
       </div>
     </div>
   </div>
+  <!-- Contact Area End -->
 </div>
 <!-- Main Wrapper End -->
+<div class="elfsight-app-13803853-d82a-47d0-ba01-896dfddf5e9b"></div>
 
 {% endblock content %}

@@ -2,27 +2,97 @@
 {% load static %}
 {% block content %}
 
-<!-- Main Wrapper Start -->
+<!-- Main Content Wrapper Start -->
 <div class="main-content-wrapper">
-  <div class="about-area bg--dark-3 mt--40 mt-sm--30">
-    <div class="container-fluid p-0">
-      <div class="row no-gutters align-items-center">
-        <div class="col-xl-6">
-          <div class="img-box text-center">
-            <img src="{% static 'assets/img/about/about-us-img1.jpg' %}" alt="about">
+  <div class="faq-area pt--40 pb--70 pt-md--30 pb-md--50">
+    <div class="container">
+      <div class="row pb--40">
+        <div class="col-12">
+          <div class="faq-heading">
+            <h2 class="mb--20">Below are frequently asked questions, you may find the answer for yourself</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec id erat sagittis, faucibus metus malesuada, eleifend turpis. Mauris semper augue id nisl aliquet, a porta lectus mattis. Nulla at tortor augue. In eget enim diam. Donec
+              gravida tortor sem, ac fermentum nibh rutrum sit amet. Nulla convallis mauris vitae congue consequat. Donec interdum nunc purus, vitae vulputate arcu fringilla quis. Vivamus iaculis euismod dui.</p>
           </div>
         </div>
-        <div class="col-xl-6">
-          <div class="row">
-            <div class="col-10 offset-1">
-              <div class="about-text text-center">
-                <h2 class="heading-secondary mb--40 mb-sm--30">
-                  About Us
-                </h2>
-                <p class="mb--40 mb-sm--30">
-                  Un duo mama-fiica cu o dragoste aparte pentru piese vintage care rezista trecerii timpului. Fiecare piesa creata cu drag raspunde unei singure intrebari: noi am purta-o cu drag?</p>
-                <div class="about-btn-group text-center">
-                  <a href="/" class="btn btn-style-3">view our work</a>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div id="accordion" class="accordion">
+            <div class="card accordion__single open">
+              <div class="card-header accordion__header" id="headingOne">
+                <a class="btn btn-link accordion__link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Mauris congue euismod purus at semper. Morbi et vulputate massa?
+                </a>
+              </div>
+              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body accordion__body">
+                  Donec mattis finibus elit ut tristique. Nullam tempus nunc eget arcu vulputate, eu porttitor tellus commodo. Aliquam erat volutpat. Aliquam consectetur lorem eu viverra lobortis. Morbi gravida, nisi id fringilla ultricies, elit
+                  lorem eleifend lorem
+                </div>
+              </div>
+            </div>
+            <div class="card accordion__single">
+              <div class="card-header accordion__header" id="headingTwo">
+                <a class="btn btn-link accordion__link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                  Donec mattis finibus elit ut tristique?
+                </a>
+              </div>
+              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="card-body accordion__body">
+                  Donec mattis finibus elit ut tristique. Nullam tempus nunc eget arcu vulputate, eu porttitor tellus commodo. Aliquam erat volutpat. Aliquam consectetur lorem eu viverra lobortis. Morbi gravida, nisi id fringilla ultricies, elit
+                  lorem eleifend lorem
+                </div>
+              </div>
+            </div>
+            <div class="card accordion__single">
+              <div class="card-header accordion__header" id="headingThree">
+                <a class="btn btn-link accordion__link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                  Vestibulum a lorem placerat, porttitor urna vel?
+                </a>
+              </div>
+              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                <div class="card-body accordion__body">
+                  Donec mattis finibus elit ut tristique. Nullam tempus nunc eget arcu vulputate, eu porttitor tellus commodo. Aliquam erat volutpat. Aliquam consectetur lorem eu viverra lobortis. Morbi gravida, nisi id fringilla ultricies, elit
+                  lorem eleifend lorem
+                </div>
+              </div>
+            </div>
+            <div class="card accordion__single">
+              <div class="card-header accordion__header" id="headingFour">
+                <a class="btn btn-link accordion__link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                  Aenean elit orci, efficitur quis nisl at, accumsan?
+                </a>
+              </div>
+              <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                <div class="card-body accordion__body">
+                  Donec mattis finibus elit ut tristique. Nullam tempus nunc eget arcu vulputate, eu porttitor tellus commodo. Aliquam erat volutpat. Aliquam consectetur lorem eu viverra lobortis. Morbi gravida, nisi id fringilla ultricies, elit
+                  lorem eleifend lorem
+                </div>
+              </div>
+            </div>
+            <div class="card accordion__single">
+              <div class="card-header accordion__header" id="headingEight">
+                <a class="btn btn-link accordion__link collapsed" data-toggle="collapse" data-target="#collapseEight" aria-expanded="true" aria-controls="collapseEight">
+                  Aenean elit orci, efficitur quis nisl at?
+                </a>
+              </div>
+              <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordion">
+                <div class="card-body accordion__body">
+                  Donec mattis finibus elit ut tristique. Nullam tempus nunc eget arcu vulputate, eu porttitor tellus commodo. Aliquam erat volutpat. Aliquam consectetur lorem eu viverra lobortis. Morbi gravida, nisi id fringilla ultricies, elit
+                  lorem eleifend lorem
+                </div>
+              </div>
+            </div>
+            <div class="card accordion__single">
+              <div class="card-header accordion__header" id="headingNine">
+                <a class="btn btn-link accordion__link collapsed" data-toggle="collapse" data-target="#collapseNine" aria-expanded="true" aria-controls="collapseNine">
+                  Morbi gravida, nisi id fringilla ultricies, elit lorem?
+                </a>
+              </div>
+              <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#accordion">
+                <div class="card-body accordion__body">
+                  Donec mattis finibus elit ut tristique. Nullam tempus nunc eget arcu vulputate, eu porttitor tellus commodo. Aliquam erat volutpat. Aliquam consectetur lorem eu viverra lobortis. Morbi gravida, nisi id fringilla ultricies, elit
+                  lorem eleifend lorem
                 </div>
               </div>
             </div>
@@ -32,6 +102,8 @@
     </div>
   </div>
 </div>
-<!-- Main Wrapper End -->
+<!-- Main Content Wrapper Start -->
+<div class="elfsight-app-13803853-d82a-47d0-ba01-896dfddf5e9b"></div>
+
 
 {% endblock content %}
