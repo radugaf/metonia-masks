@@ -4502,12 +4502,12 @@ Mobile Menu
   box-sizing: border-box;
 }
 .mobile-menu .mean-bar:before {
-  content: "Menu";
+  content: "Descoperă Lumea Metanoia";
   left: 4rem;
   top: 1.5rem;
   font-size: 1.6rem;
   font-weight: 500;
-  color: #fff;
+  color: #000000;
   text-transform: uppercase;
 }
 .mobile-menu .mean-bar:after {
@@ -4516,7 +4516,7 @@ Mobile Menu
   top: 1.5rem;
   font-size: 2rem;
   font-weight: 500;
-  color: #fff;
+  color: #000000;
   z-index: -1;
 }
 .mobile-menu .mean-bar .meanmenu-reveal {
@@ -4534,7 +4534,7 @@ Mobile Menu
 .mobile-menu .mean-bar .meanmenu-reveal span.menu-bar {
   height: 2px;
   width: 20px;
-  background-color: #000000;
+  background-color: #ffffff;
   display: block;
   margin: 8px 0;
 }
