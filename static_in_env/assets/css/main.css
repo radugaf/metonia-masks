@@ -4534,7 +4534,7 @@ Mobile Menu
 .mobile-menu .mean-bar .meanmenu-reveal span.menu-bar {
   height: 2px;
   width: 20px;
-  background-color: #fff;
+  background-color: #000000;
   display: block;
   margin: 8px 0;
 }
