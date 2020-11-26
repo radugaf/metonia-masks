@@ -4573,7 +4573,7 @@ Mobile Menu
   transform: rotate(-45deg);
 }
 .mobile-menu .mean-bar .mean-nav {
-  background-color: #343434;
+  background-color: #ffffff;
 }
 .mobile-menu .mean-bar .mean-nav > ul {
   border: 1px solid #2d2d2d;
@@ -9519,6 +9519,7 @@ User Dashboard tab
 
 .bg--dark-4 {
   background-color: #ffffff;
+  border-color: #000000 !important;
 }
 
 .bg--zircon-light {
