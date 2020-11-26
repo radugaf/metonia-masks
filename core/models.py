@@ -5,7 +5,6 @@ from django.db.models import Sum
 from django.shortcuts import reverse
 from django_countries.fields import CountryField
 
-
 CATEGORY_CHOICES = (
     ('S', 'Luxury'),
     ('SW', 'Casual'),
@@ -24,7 +23,6 @@ ADDRESS_CHOICES = (
     ('S', 'Shipping'),
 )
 
-
 class UserProfile(models.Model):
     user = models.OneToOneField(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
@@ -33,7 +31,6 @@ class UserProfile(models.Model):
 
     def __str__(self):
         return self.user.username
-
 
 class Item(models.Model):
     title = models.CharField(max_length=100)
@@ -138,7 +135,6 @@ class Order(models.Model):
             total -= self.coupon.amount
         return total
 
-
 class Address(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL,
                              on_delete=models.CASCADE)
@@ -155,7 +151,6 @@ class Address(models.Model):
     class Meta:
         verbose_name_plural = 'Addresses'
 
-
 class Payment(models.Model):
     stripe_charge_id = models.CharField(max_length=50)
     user = models.ForeignKey(settings.AUTH_USER_MODEL,
@@ -166,14 +161,12 @@ class Payment(models.Model):
     def __str__(self):
         return self.user.username
 
-
 class Coupon(models.Model):
     code = models.CharField(max_length=15)
     amount = models.FloatField()
 
     def __str__(self):
         return self.code
-
 
 class Refund(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
@@ -184,14 +177,12 @@ class Refund(models.Model):
     def __str__(self):
         return f"{self.pk}"
 
-
 def userprofile_receiver(sender, instance, created, *args, **kwargs):
     if created:
         userprofile = UserProfile.objects.create(user=instance)
 
 
 post_save.connect(userprofile_receiver, sender=settings.AUTH_USER_MODEL)
-
 
 class Contact(models.Model):
     first_name = models.CharField(max_length=50)
