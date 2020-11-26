@@ -3324,7 +3324,7 @@ button,
 
 .header-middle {
   padding: 3.6rem 0;
-  border-bottom: 1px solid #800020;
+  border-bottom: 3px solid #800020;
 }
 @media (max-width: 61.94em) {
   .header-middle {
@@ -3616,7 +3616,7 @@ button,
 }
 
 .header-bottom {
-  border-bottom: 1px solid #800020;
+  border-bottom: 3px solid #800020;
 }
 
 .contact-info {
