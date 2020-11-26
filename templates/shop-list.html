@@ -69,11 +69,11 @@
                   <img src="{{ item.image_lateral1.url }}" alt="Product" class="secondary-image" />
                   {% endif %}
                   <div class="product-img-overlay">
-{% if item.label %}
+                    {% if item.label %}
                     <span class="product-label discount">
                       {{ item.get_label_display }}
                     </span>
-{% endif %}
+                    {% endif %}
                     <!-- <a data-toggle="modal" data-target="#productModal" class="btn btn-transparent btn-fullwidth btn-medium btn-style-1">Quick View</a> -->
                   </div>
                 </div>

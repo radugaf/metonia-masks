@@ -36,8 +36,15 @@
             {% for item in object_list %}
             <div class="mirora-product">
               <div class="product-img">
+
+                {% if item.image %}
                 <img src="{{ item.image.url }}" alt="Product" class="primary-image" />
+                {% endif %}
+
+                {% if item.image_fata %}
                 <img src="{{ item.image_fata.url }}" alt="Product" class="secondary-image" />
+                {% endif %}
+
                 <div class="product-img-overlay">
                   <span class="product-label discount"> </span>
                   <!-- <a data-toggle="modal" data-target="#productModal" class="btn btn-transparent btn-fullwidth btn-medium btn-style-1">Quick View</a> -->
@@ -125,7 +132,7 @@
 
                     <div class="thumb-menu-item">
                       <a href="#thumb2" data-toggle="tab" class="nav-link">
-                        <img src="{{ item.image_fata.url }}" alt="product thumb" />
+                        <img src= alt="product thumb" />
                       </a>
                     </div>
 
