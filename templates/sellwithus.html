@@ -1,68 +1,116 @@
-{% extends "base.html" %}
-{% load static %}
-{% block content %}
+{% extends "base.html" %} {% load static %} {% block content %}
 
 <!-- Main Wrapper Start -->
 <div class="main-content-wrapper">
-
   <!-- Contact Area Start -->
   <div class="contact-area ptb--80 ptb-md--60">
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <h2 class="heading-secondary border-bottom mb--30">Haide sa incepem o colaborare!</h2>
+          <h2
+            style="text-align: center"
+            class="heading-secondary border-bottom mb--30"
+          >
+            Ai o esarfa vintage de care vrei sa te desparti? Scrie-ne!
+          </h2>
           <form class="form form--contact" id="contact-form" action="mail.php">
             <div class="form-row mb--20">
-              <div class="col-md-2 text-md-right">
-                <label for="contact_name">Nume Complet <sup>*</sup></label>
-              </div>
-              <div class="col-md-10">
-                <input type="text" name="contact_name" id="contact_name" class="form__input form__input--3">
-              </div>
-            </div>
-            <div class="form-row mb--20">
-              <div class="col-md-2 text-md-right">
-                <label for="contact_name">Your Email <sup>*</sup></label>
-              </div>
-              <div class="col-md-10">
-                <input type="email" name="contact_email" id="contact_email" class="form__input form__input--3">
+              <div class="col-xl-12">
+                <input
+                  type="text"
+                  placeholder="Nume Complet"
+                  name="contact_name"
+                  id="contact_name"
+                  class="form__input form__input--3"
+                />
               </div>
             </div>
             <div class="form-row mb--20">
-              <div class="col-md-2 text-md-right">
-                <label for="contact_name">Phone<sup>*</sup></label>
-              </div>
-              <div class="col-md-10">
-                <input type="text" name="contact_name" id="contact_name" class="form__input form__input--3">
-              </div>
-            </div>
-            <div class="form-row mb--20">
-              <div class="col-md-2 text-md-right">
-                <label for="contact_name">Descriere Produs<sup>*</sup></label>
-              </div>
-              <div class="col-md-10">
-                <textarea name="contact_message" id="contact_message" class="form__input form__input--3 form__input--textarea"></textarea>
+              <div class="col-xl-12">
+                <input
+                  type="email"
+                  placeholder="Email"
+                  name="contact_email"
+                  id="contact_email"
+                  class="form__input form__input--3"
+                />
               </div>
             </div>
             <div class="form-row mb--20">
-              <div class="col-md-2 text-md-right">
-                <label for="contact_name">Stare Produs<sup>*</sup></label>
-              </div>
-              <div class="col-md-10">
-                <input type="text" name="contact_name" id="contact_name" class="form__input form__input--3">
+              <div class="col-xl-12">
+                <input
+                  type="text"
+                  placeholder="Phone"
+                  name="contact_name"
+                  id="contact_name"
+                  class="form__input form__input--3"
+                />
               </div>
             </div>
             <div class="form-row mb--20">
-              <div class="col-md-2 text-md-right">
-                <label for="contact_name">Pret Produs<sup>*</sup></label>
+              <div class="col-xl-12">
+                <textarea
+                  name="contact_message"
+                  placeholder="Descriere .... "
+                  id="contact_message"
+                  class="form__input form__input--3 form__input--textarea"
+                ></textarea>
               </div>
-              <div class="col-md-10">
-                <input type="text" name="contact_name" id="contact_name" class="form__input form__input--3">
+            </div>
+            <div class="form-row mb--20">
+              <div class="form__group col-12">
+                <label for="billing_country" class="form__label">Stare</label>
+                <select
+                  id="billing_country"
+                  name="billing_country"
+                  class="form__input form__input--2 nice-select"
+                >
+                  <option value="">Stare</option>
+                  <option value="FB">Noua cu etichete</option>
+                  <option value="FB">Noua fara etichete</option>
+                  <option value="FB">Foarte buna</option>
+                  <option value="FB">Buna</option>
+                  <option value="FB">Purtata</option>
+                  <option value="FB">Prezinta mici defecte</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row mb--20">
+              <div class="col-xl-12">
+                <input
+                  type="text"
+                  placeholder="Pret Produs"
+                  name="contact_name"
+                  id="contact_name"
+                  class="form__input form__input--3"
+                />
+              </div>
+            </div>
+            <div class="form-row mb--20">
+              <div class="col-xl-12">
+                <div class="input-group">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroupFileAddon01"
+                      >Upload</span
+                    >
+                  </div>
+                  <div class="custom-file">
+                    <input
+                      type="file"
+                      class="custom-file-input"
+                      id="inputGroupFile01"
+                      aria-describedby="inputGroupFileAddon01"
+                    />
+                    <label class="custom-file-label" for="inputGroupFile01"
+                      >Choose file</label
+                    >
+                  </div>
+                </div>
               </div>
             </div>
             <div class="form-row">
               <div class="col-12 text-right">
-                <button type="submit" class="form__submit">Send Email</button>
+                <button type="submit" class="form__submit">Submit</button>
               </div>
             </div>
             <div class="form__output"></div>
