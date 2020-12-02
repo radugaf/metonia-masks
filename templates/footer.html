@@ -9,7 +9,35 @@
             <p>
               Address: Calea Griviței 202, BUCUREȘTI
             </p>
-            <p>Email: email@email.com</p>
+            <div class="col-lg-8 d-flex align-items-center flex-column flex-lg-row">
+          <ul class="social social-round mr--20">
+            <li class="social__item">
+              <a href="http://twitter.com" class="social__link__twitter">
+                <i class="fa fa-twitter"></i>
+              </a>
+            </li>
+            <li class="social__item">
+              <a href="plus.google.com" class="social__link__google">
+                <i class="fa fa-google-plus"></i>
+              </a>
+            </li>
+            <li class="social__item">
+              <a href="https://www.facebook.com/metanoiamasks" class="social__link__facebook">
+                <i class="fa fa-facebook"></i>
+              </a>
+            </li>
+            <li class="social__item">
+              <a href="http://youtube.com" class="social__link__youtube">
+                <i class="fa fa-youtube"></i>
+              </a>
+            </li>
+            <li class="social__item">
+              <a href="https://www.instagram.com/metanoia_masks/" class="social__link__instagram">
+                <i class="fa fa-instagram"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
           </div>
         </div>
       </div>
@@ -37,7 +65,7 @@
         <div class="footer-widget">
           <h3 class="widget-title">New this week</h3>
           <div class="widget-product">
-            {% for item in object_list %}
+            {% if item in object_list %}
             <div class="product">
               <div class="product-img">
                 <img src="{{ item.image.url }}"alt="products" />
@@ -52,7 +80,7 @@
                 </div>
               </div>
             </div>
-            {% endfor %}
+            {% endif %}
 
           </div>
         </div>
