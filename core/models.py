@@ -39,7 +39,7 @@ class Item(models.Model):
     category = models.CharField(choices=CATEGORY_CHOICES, max_length=2)
     label = models.CharField(choices=LABEL_CHOICES, max_length=1, null=True, blank=True)
     slug = models.SlugField()
-    description = models.TextField(max_length=150)
+    description = models.TextField()
 
     # Images
     image = models.ImageField()
