@@ -16,12 +16,14 @@ from .views import (
     Privacy,
     Refunds,
     SellWithUs,
-    Gallery
+    Gallery,
+    sell_with_us_two_form
 )
 from . import views
 app_name = 'core'
 
 urlpatterns = [
+    path('sell-with-us/', views.sell_with_us_two_form, name='sell-with-us'),
     path('', HomeView.as_view(), name='home'),
     path('checkout/', CheckoutView.as_view(), name='checkout'),
     path('order-summary/', OrderSummaryView.as_view(), name='order-summary'),
@@ -41,7 +43,7 @@ urlpatterns = [
     path('terms/', Terms.as_view(), name='terms'),
     path('privacy/', Privacy.as_view(), name='privacy'),
     path('refunds/', Refunds.as_view(), name='refunds'),
-    path('sellwithus/', SellWithUs.as_view(), name='sellwithus'),
+    # path('sellwithus/', SellWithUs.as_view(), name='sellwithus'),
     path('gallery/', Gallery.as_view(), name='gallery' )
 
 ]

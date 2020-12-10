@@ -1,7 +1,7 @@
 from django import forms
 from django_countries.fields import CountryField
 from django_countries.widgets import CountrySelectWidget
-from .models import Contact
+from .models import Contact, SellWIthUsTwo
 
 
 PAYMENT_CHOICES = (
@@ -61,7 +61,12 @@ class PaymentForm(forms.Form):
     save = forms.BooleanField(required=False)
     use_default = forms.BooleanField(required=False)
 
-class ContactForm(forms.ModelForm):
-    class Meta:
-        model = Contact
-        fields = ('first_name', 'last_name', 'email', 'message')
+class SellWithUsTwoForm(forms.ModelForm):
+     class Meta:
+        model = SellWIthUsTwo
+        fields = '__all__'
+
+    
+
+
+   

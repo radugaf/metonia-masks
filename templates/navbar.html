@@ -94,11 +94,14 @@
   <div class="header-bottom header-top-1 position-relative navigation-wrap fixed-header">
     <div class="container position-static">
       <div class="row">
+          <div>   
+          </div>
         <div class="col-12 position-static text-center">
           <nav class="main-navigation">
             <ul class="mainmenu">
             <li href="/" class="mainmenu__item logo-box">
-            <img src="{% static 'assets/img/logo/logo123.png' %}" alt="logo" />
+            
+
             </li>
               <li class="mainmenu__item">
                 <a href="/" class="mainmenu__link">Home</a>
@@ -110,13 +113,13 @@
                 <a href="{% url 'core:about' %}" class="mainmenu__link">About Us</a>
               </li>
               <li class="mainmenu__item">
-                <a href="{% url 'core:sellwithus' %}" class="mainmenu__link">Sell to Us</a>
+                <a href="/sell-with-us" class="mainmenu__link">Sell to Us</a>
               </li>
               <li class="mainmenu__item mini-cart-icon">
                 <div class="mini-cart mini-cart--1">
-                  <a class="mini-cart bordered-icon" href="{% url 'core:order-summary' %}" id="cartDropdown">
+                  <a class="mini-cart bordered-icon" href="{% url 'core:order-summary' %}">
                     <span class="mini-cart__count">{{ request.user|cart_item_count }}</span>
-                    <i class="icon_cart_alt mini-cart__icon" href="{% url 'core:order-summary' %}"></i>
+                    <i class="icon_cart_alt mini-cart__icon"></i>
                   </a>
                 </div>
               </li> 
@@ -126,11 +129,15 @@
           </nav>
         </div>
       </div>
+      <div id="custom-row">
+      <img src="{% static 'assets/img/logo/logo123.png' %}" alt="logo" id="custom-log-mobile"/>
+            </div>
       <div class="row no-gutters">
         <div class="col-12">
           <div class="mobile-menu"></div>
         </div>
       </div>
+
     </div>
   </div>
 </header>

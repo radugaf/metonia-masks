@@ -167,6 +167,7 @@ button {
   cursor: pointer;
 }
 
+
 /*****************************
 01. Typography CSS
 *****************************/
@@ -184,6 +185,7 @@ button {
 .heading-primary--2 {
   font-size: 3.8rem;
 }
+
 @media (max-width: 74.9375em) {
   .heading-primary {
     font-size: 4.2rem;
@@ -268,7 +270,7 @@ button {
   text-transform: uppercase;
   font-size: 2.5rem;
   margin-bottom: 0;
-  color: #ffffff;
+  color: #000000;
   line-height: 1.35;
 }
 
@@ -8689,23 +8691,7 @@ User Dashboard tab
 
 .product-details-availability i {
   padding-right: 0.5rem;
-}
-
-.product-details-name {
-  font-size: 2.4rem;
-  margin-bottom: 2rem;
-  text-transform: capitalize;
-}
-@media (max-width: 35.94em) {
-  .product-details-name {
-    font-size: 2rem;
-  }
-}
-
-.product-details-list {
-  margin-bottom: 2rem;
-}
-.product-details-list li {
+}custom-logocustom-logo
   line-height: 1;
 }
 .product-details-list li:not(:last-child) {
@@ -9132,7 +9118,7 @@ User Dashboard tab
 }
 
 .order-details {
-  background-color: #2e2e2e;
+  background-color: #efefef;
   padding: 3rem 4rem;
 }
 .order-details .heading-tertiary {
@@ -9533,4 +9519,16 @@ User Dashboard tab
 
 .green-dark-bg {
   background-color: #1f4244;
+}
+
+
+#custom-log-mobile {
+  max-width: 80px;
+}
+
+#custom-row {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

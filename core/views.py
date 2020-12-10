@@ -12,7 +12,7 @@ from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
 from django.views.generic import ListView, DetailView, View
 
-from .forms import ContactForm, CheckoutForm, CouponForm, RefundForm, PaymentForm
+from .forms import CheckoutForm, CouponForm, RefundForm, PaymentForm, SellWithUsTwoForm
 from .models import Gallery, SellWithUs, Item, OrderItem, Order, Address, Payment, Coupon, Refund, UserProfile, Terms, Privacy, Refunds
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -385,9 +385,9 @@ class Refunds(ListView):
     model = Refunds
     template_name = "refunds.html"
 
-class SellWithUs(ListView):
-    model = SellWithUs
-    template_name = "sellwithus.html"
+# class SellWithUs(ListView):
+#     model = SellWithUs
+#     template_name = "sellwithus.html"
 
 class Gallery(ListView):
     model = Gallery
@@ -561,3 +561,23 @@ def contact(request):
 class ShopListView(ListView):
     model = Item
     template_name = 'shop-list.html'
+
+# def sell_with_us_two_form(request):
+#     form = SellWIthUsTwoForm(request.POST or None)
+#     if form.is_valid():
+#         form.save()
+
+#     context = { 
+#         'form': form
+#     }
+#     return render(request, "sellwithus.html", context)
+
+def sell_with_us_two_form(request):
+    if request.method == 'POST':
+        form = SellWithUsTwoForm(request.POST, request.FILES)
+        if form.is_valid():
+            SellWithUs.objects.create(**form.cleaned_data)
+            return redirect('http://metanoia-masks.ro')
+    else:
+        form = SellWithUsTwoForm()
+    return render(request, 'sellwithus.html', {'form': form})

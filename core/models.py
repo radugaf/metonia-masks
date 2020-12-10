@@ -23,6 +23,15 @@ ADDRESS_CHOICES = (
     ('S', 'Shipping'),
 )
 
+STARE_CHOICES = (
+    ('NE', 'Noua cu Etichete'),
+    ('Noua Fara Etichete', 'Noua Fara Etichete'),
+    ('Foarte Buna', 'Foarte Buna'),
+    ('Buna', 'Buna'),
+    ('Purtata', 'Purtata'),
+    ('Prezinta Mici Defecte', 'Prezinta Mici Defecte'),
+)
+
 class UserProfile(models.Model):
     user = models.OneToOneField(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
@@ -66,6 +75,19 @@ class Item(models.Model):
             'slug': self.slug
         })
 
+class SellWIthUsTwo(models.Model):
+    full_name = models.CharField(max_length=30, blank=True, null=True)
+    email = models.EmailField()
+    phone = models.CharField(max_length=30, blank=True, null=True)
+    description = models.TextField(null=True, blank=True)
+    stare = models.CharField(choices=STARE_CHOICES, max_length=30, null=True, blank=True)
+    pret = models.IntegerField()
+    image = models.ImageField()
+    image_2 = models.ImageField()
+    image_3 = models.ImageField()
+    image_4 = models.ImageField() 
+    image_5 = models.ImageField()
+    
 
 class OrderItem(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL,

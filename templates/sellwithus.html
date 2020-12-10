@@ -13,108 +13,50 @@
           >
             Ai o esarfa vintage de care vrei sa te desparti? Scrie-ne!
           </h2>
-          <form class="form form--contact" id="contact-form" action="mail.php">
-            <div class="form-row mb--20">
-              <div class="col-xl-12">
-                <input
-                  type="text"
-                  placeholder="Nume Complet"
-                  name="contact_name"
-                  id="contact_name"
-                  class="form__input form__input--3"
-                />
-              </div>
+        {% load widget_tweaks %}
+
+<form method="post" action="{% url 'core:sell-with-us'%}" enctype: "multipart/form-data" novalidate>
+  {% csrf_token %}
+
+  {% for hidden_field in form.hidden_fields %}
+    {{ hidden_field }}
+  {% endfor %}
+
+  {% if form.non_field_errors %}
+    <div class="alert alert-danger" role="alert">
+      {% for error in form.non_field_errors %}
+        {{ error }}
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {% for field in form.visible_fields %}
+    <div class="form-group">
+      {{ field.label_tag }}
+
+      {% if form.is_bound %}
+        {% if field.errors %}
+          {% render_field field class="form-control is-invalid" %}
+          {% for error in field.errors %}
+            <div class="invalid-feedback">
+              {{ error }}
             </div>
-            <div class="form-row mb--20">
-              <div class="col-xl-12">
-                <input
-                  type="email"
-                  placeholder="Email"
-                  name="contact_email"
-                  id="contact_email"
-                  class="form__input form__input--3"
-                />
-              </div>
-            </div>
-            <div class="form-row mb--20">
-              <div class="col-xl-12">
-                <input
-                  type="text"
-                  placeholder="Phone"
-                  name="contact_name"
-                  id="contact_name"
-                  class="form__input form__input--3"
-                />
-              </div>
-            </div>
-            <div class="form-row mb--20">
-              <div class="col-xl-12">
-                <textarea
-                  name="contact_message"
-                  placeholder="Descriere .... "
-                  id="contact_message"
-                  class="form__input form__input--3 form__input--textarea"
-                ></textarea>
-              </div>
-            </div>
-            <div class="form-row mb--20">
-              <div class="form__group col-12">
-                <label for="billing_country" class="form__label">Stare</label>
-                <select
-                  id="billing_country"
-                  name="billing_country"
-                  class="form__input form__input--2 nice-select"
-                >
-                  <option value="">Stare</option>
-                  <option value="FB">Noua cu etichete</option>
-                  <option value="FB">Noua fara etichete</option>
-                  <option value="FB">Foarte buna</option>
-                  <option value="FB">Buna</option>
-                  <option value="FB">Purtata</option>
-                  <option value="FB">Prezinta mici defecte</option>
-                </select>
-              </div>
-            </div>
-            <div class="form-row mb--20">
-              <div class="col-xl-12">
-                <input
-                  type="text"
-                  placeholder="Pret Produs"
-                  name="contact_name"
-                  id="contact_name"
-                  class="form__input form__input--3"
-                />
-              </div>
-            </div>
-            <div class="form-row mb--20">
-              <div class="col-xl-12">
-                <div class="input-group">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text" id="inputGroupFileAddon01"
-                      >Upload</span
-                    >
-                  </div>
-                  <div class="custom-file">
-                    <input
-                      type="file"
-                      class="custom-file-input"
-                      id="inputGroupFile01"
-                      aria-describedby="inputGroupFileAddon01"
-                    />
-                    <label class="custom-file-label" for="inputGroupFile01"
-                      >Choose file</label
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="col-12 text-right">
-                <button type="submit" class="form__submit">Submit</button>
-              </div>
-            </div>
-            <div class="form__output"></div>
-          </form>
+          {% endfor %}
+        {% else %}
+          {% render_field field class="form-control is-valid" %}
+        {% endif %}
+      {% else %}
+        {% render_field field class="form-control" %}
+      {% endif %}
+
+      {% if field.help_text %}
+        <small class="form-text text-muted">{{ field.help_text }}</small>
+      {% endif %}
+    </div>
+  {% endfor %}
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
         </div>
       </div>
     </div>
