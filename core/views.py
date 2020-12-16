@@ -13,7 +13,7 @@ from django.utils import timezone
 from django.views.generic import ListView, DetailView, View
 
 from .forms import CheckoutForm, CouponForm, RefundForm, PaymentForm, SellWithUsTwoForm
-from .models import Gallery, SellWithUs, Item, OrderItem, Order, Address, Payment, Coupon, Refund, UserProfile, Terms, Privacy, Refunds
+from .models import Gallery, SellWithUs, Item, OrderItem, Order, Address, Payment, Coupon, Refund, UserProfile, Terms, Privacy, Refunds, SellWIthUsTwo
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
@@ -576,7 +576,7 @@ def sell_with_us_two_form(request):
     if request.method == 'POST':
         form = SellWithUsTwoForm(request.POST, request.FILES)
         if form.is_valid():
-            SellWithUs.objects.create(**form.cleaned_data)
+            SellWIthUsTwo.objects.create(**form.cleaned_data)
             return redirect('http://metanoia-masks.ro')
     else:
         form = SellWithUsTwoForm()
