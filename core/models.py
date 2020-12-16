@@ -82,11 +82,11 @@ class SellWIthUsTwo(models.Model):
     description = models.TextField(null=True, blank=True)
     stare = models.CharField(choices=STARE_CHOICES, max_length=30, null=True, blank=True)
     pret = models.IntegerField()
-    image = models.ImageField()
-    image_2 = models.ImageField()
-    image_3 = models.ImageField()
-    image_4 = models.ImageField() 
-    image_5 = models.ImageField()
+    image = models.ImageField(null=True)
+    image_2 = models.ImageField(null=True)
+    image_3 = models.ImageField(null=True)
+    image_4 = models.ImageField(null=True) 
+    image_5 = models.ImageField(null=True)
     
 
 class OrderItem(models.Model):
@@ -213,19 +213,38 @@ class Contact(models.Model):
     message = models.TextField()
 
     def __str__():
-        return f"{slef.first_name} {self.last_name}"
+        return f"{self.first_name} {self.last_name}"
 
 class Terms(models.Model):
     title_terms = models.CharField(max_length=250)
-    content_terms = models.TextField()
+    content_terms = models.TextField(null=True)
+    definitii = models.TextField(null=True) 
+    dispozitii_generale = models.TextField(null=True) 
+    reguli_de_utilizare = models.TextField(null=True) 
+    proprietate_intelectuala = models.TextField(null=True) 
+    informatiile_prezentate = models.TextField(null=True) 
+    politica_de_vanzare = models.TextField(null=True) 
+    contul = models.TextField(null=True) 
+    comanda = models.TextField(null=True) 
+    livrarea = models.TextField(null=True) 
+    transferul_proprietatii= models.TextField(null=True) 
+    facturare_plata = models.TextField(null=True) 
+    conformitatea_produselor = models.TextField(null=True) 
+    dreptu_denuntare = models.TextField(null=True) 
+    gdpr = models.TextField(null=True) 
+    promovare_produse_si_oferte = models.TextField(null=True) 
+    raspundere = models.TextField(null=True) 
+    sesizari = models.TextField(null=True) 
+    ultima_legislatie = models.TextField(null=True) 
+
 
 class Privacy(models.Model):
     title_privacy = models.CharField(max_length=250)
-    content_privacy = models.TextField()
+    content_privacy = models.TextField(null=True)
 
 class Refunds(models.Model):
     title_refunds = models.CharField(max_length=250)
-    content_refunds = models.TextField()
+    content_refunds = models.TextField(null=True)
 
 class SellWithUs(models.Model):
     item_title = models.CharField(max_length=250)
@@ -233,3 +252,4 @@ class SellWithUs(models.Model):
 
 class Gallery(models.Model):
     gallery_title = models.CharField(max_length=250)
+
