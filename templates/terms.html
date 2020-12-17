@@ -1,4 +1,6 @@
-{% extends "base.html" %} {% load static %} {% block content %}
+{% extends "base.html" %} 
+{% load static %} 
+{% block content %}
 
 <!-- Main Content Wrapper Start -->
 <div class="main-content-wrapper">
@@ -16,8 +18,7 @@
                   aria-expanded="true"
                   aria-controls="collapseOne"
                 >
-                  Mauris congue euismod purus at semper. Morbi et vulputate
-                  massa?
+                  Introducere
                 </a>
               </div>
               <div
@@ -27,25 +28,7 @@
                 data-parent="#accordion"
               >
                 <div class="card-body accordion__body">
-                  Orice accesare sau vizitare a site-ului http://www.______.ro/
-                  ori utilizarea Serviciilor oferite prin intermediul acestui
-                  Site implică acceptarea Termenilor și condițiilor expuse în
-                  cele ce urmează, în afară de cazul în care pentru Conținutul
-                  respectiv există condiții de folosire distinct formulate  sau 
-                  dispuneți de un alt acord de utilizare valid încheiat. În
-                  cazul în care nu sunteți de acord cu Termenii și Condițiile
-                  expuse în prezentul Document, vă rugăm să nu utilizați acest
-                  Site.
-                  <br />
-                  <br />
-                  Acest site este operat de societatea _______srl, are  sediul
-                  in _________, denumită în cele ce urmeaza _______srl.
-                  <br />
-                  <br />
-                  Accesul la Serviciile din site va fi permis numai Membrilor si
-                  Clienților și numai în urma  acceptării condițiilor de
-                  utilizare stabilite prin prezentul Document și a condițiilor
-                  prevăzute în documentele ce il completeaza:
+                  {% for terms in object_list %} {{ terms.content_terms }} {% endfor %}
                 </div>
               </div>
             </div>
@@ -68,63 +51,7 @@
                 data-parent="#accordion"
               >
                 <div class="card-body accordion__body">
-                  Client - Persoana care are sau obține acces la Conținut și
-                  Serviciu și care a plasat cel putin o Comanda pe Site; Cont -
-                  ansamblul format dintr-o adresă de e-mail și o parolă care
-                  permite unui singur Utilizator accesul la secțiuni
-                  restrictionate ale Site-ului prin care se face accesul la
-                  Serviciu sau transmiterea Comenzii, caz în care conține
-                  informații despre Client și istoricul Clientului în Site
-                  (Comenzi, facturi, garanții Produse, retur etc.); Conținut -
-                  orice informație aflată pe Site sau disponibilă în Serviciu
-                  care poate fi vizitată, vizualizată sau accesată de
-                  Utilizator/Membru/Client prin intermediul unui echipament
-                  electronic; - conținutul oricărei comunicări trimise
-                  Utilizatorilor/Membrilor/Clienților de către _______prin
-                  mijloace electronice și/sau orice alt mijloc de comunicare
-                  disponibil; - orice informație comunicată prin orice mijloc de
-                  către un angajat/colaborator al _______Membrilor/Clienților
-                  conform informațiilor de contactare specificate de către
-                  acesta; - informații legate de Produsele și/sau prețurile
-                  practicate de _______întro anumită perioadă; - informații
-                  legate de Produsele, serviciile și/sau prețurile  practicate
-                  de către un terț cu care _______are încheiate contracte de
-                  parteneriat, într-o anumită perioadă; - date referitoare la
-                  _______sau alte date ale acesteia; Comandă – operațiunea prin
-                  care Clientul își exprimă intenția de a achiziționa produse
-                  comercializate prin intermediul Site-ului de către _______;
-                  Contract - reprezintă înţelegerea consensuală la distanţă
-                  intervenită între _______şi Client cu privire la vânzarea,
-                  respectiv achiziţionarea, unuia sau mai multor Produse de pe
-                  Site, prin lansarea unei Comenzi de către Client şi acceptarea
-                  ei de către Vânzător, cu respectarea prevederilor legale şi a
-                  Termenilor şi Condițiilor; Document - prezentele Termeni și
-                  Condiții; Membru - Persoana fizica care are sau obtine acces
-                  la Conținut, prin orice mijloc de comunicare sau in baza unui
-                  acord de utilizare și care necesită crearea și utilizarea unui
-                  Cont; Newsletter - mijloc de informare periodic, exclusiv
-                  electronic, respectiv poșta electronică sau altă formă de
-                  comunicare la distanţă (e-mail, SMS) asupra Produselor și/sau
-                  a promoțiilor desfășurate de _______într-o anumită perioadă;
-                  Produse - Orice bunuri (produse) care sunt puse la dispoziţia
-                  Utilizatorului de către _______în vederea achiziţionării,
-                  contra cost, prin utilizarea Site-ului. Serviciu - Serviciul
-                  de comerț electronic desfășurat exclusiv pe secțiunile public
-                  disponibile ale Site-ului,  în sensul acordării posibilității
-                  Utilizatorilor de a Contracta produse folosind mijloace
-                  exclusiv electronice, inclunzând și alte mijloace de
-                  comunicare la distanță (telefonic). Produsele oferite prin
-                  intermediul acestui Site sunt disponibile pentru livrare în
-                  urmatoarele țări ale Uniunii Europene: __________. Site –
-                  domeniul  www.______.ro și subdomeniile acestuia.
-                  Specificații – toate specificațiile și/sau descrierile
-                  Produselor așa cum sunt precizate în descrierea acestora.
-                  Utilizator - Persoana fizică care are sau obtine acces la
-                  Conținut, prin orice mijloc de comunicare electronic, care nu
-                  are un Cont creat și nu a plasat nicio comandă pe Site.
-                  Tranzacție - operaţiunea de plată, respectiv încasare, a unei
-                  sume de bani ca urmare a vânzării, respectiv achiziţionării,
-                  unui Produs prin intermediul Site-ului.
+                  {% for terms in object_list %} {{ terms.definitii }} {% endfor %}
                 </div>
               </div>
             </div>
@@ -147,39 +74,8 @@
                 data-parent="#accordion"
               >
                 <div class="card-body accordion__body">
-                  _______ poate modifica în orice moment acest Document pentru a
-                  reflecta modificari ale legislației, ale politicilor interne
-                  sau ale tehnologiei folosite. Orice modificări aduse
-                  Documentului vor intra în vigoare în cazul Serviciilor doar
-                  pentru comenzile înregistrate după publicarea modificărilor
-                  respective pe acest Site. _______ are dreptul, în orice
-                  moment, să modifice, să suspende sau să înceteze
-                  comercializarea online a Produselor, parţial sau în
-                  totalitate, temporar sau permanent, cu sau fără anunț /
-                  notificare prealabil/ă/. _______ va depune eforturile tehnice
-                  pentru asigurarea funcționării în bune condiții a Site- ului.
-                  În cazul în care vor exista întreruperi în funcționare sau
-                  imposibilități de accesare de către Utilizatori/
-                  Clienți/Membrii pe o perioada determinată de timp _______ nu
-                  va fi răspunzător față de nicio persoană pentru nicio daună
-                  sau pentru pierderi suferite, rezultate direct sau indirect ca
-                  urmare a folosirii necorespunzătoare a Servicului furnizat, a
-                  nefuncționării Serviciului din motive de ordin tehnic și/sau
-                  din acțiunea unor terți. _______ va depune diligențele
-                  necesare pentru realizarea scopului Site-ului și nu are nicio
-                  responsabilitate cu privire la Conținutul postat de
-                  Utilizatori în cadrul Serviciilor. _______ nu își asumă nicio
-                  responsabilitate și nu va fi răspunzător pentru nicio daună
-                  sau viruși care ar putea sa vă afecteze computerul sau alte
-                  echipamente electronice în urma accesarii sau utilizarii
-                  acestui Site sau descărcării oricărui material, informații,
-                  text, imagini video sau audio de pe site. Accesarea acestui
-                  Site se realizează pe riscul propriu al utilizatorului,
-                  _______ nefiind în niciun fel răspunzătoar pentru orice
-                  prejudicii directe sau indirecte determinate de accesarea
-                  Site-ului sau ca urmare a  efectuării/finalizării unei Comenzi
-                  sau oricărei utilizări a datelor şi informațiilor de pe acest
-                  Site.
+                  {% for terms in object_list %} {{ terms.dispozitii_generale }}
+                  {% endfor %}
                 </div>
               </div>
             </div>
@@ -202,35 +98,78 @@
                 data-parent="#accordion"
               >
                 <div class="card-body accordion__body">
-                  Este interzisă utilizarea Site-ului pentru promovarea sau
-                  comercializarea pe acesta a altor bunuri sau servicii decât
-                  cele prezentate de către _______. Este interzis să folosiți
-                  Site-ul pentru a afișa sau transmite orice fel de material ce
-                  are un caracter ilegal, abuziv, licențios, calomniator,
-                  vulgar, instigator, amenințător, pornografic sau profanator,
-                  sau orice alt material care poate constitui sau încuraja un
-                  comportament ce va putea da naștere unei infracțiuni sau care
-                  are putea conduce la atragerea răspunderii civile ori ar
-                  reprezenta o încălcare a unor alte prevederi legale. Este
-                  interzisă accesarea Site-ului sau utilizarea Serviciilor 
-                  într-un mod de natura a avaria, dezactiva, supraîncărca sau
-                  deteriora vreun server sau rețele conetate la vreun server sau
-                  care ar putea influența utilizarea Serviciilor de către orice
-                  alt Utilizator. Este interzisă orice ștergere, adăugare,
-                  inserare, modificare a unor informații aflate pe Site, precum
-                  și orice încercare de a obține acces neautorizat la Site, la
-                  conturile altor Utilizatori, la sisteme sau rețele de
-                  computere conectate sau la orice alte Servicii prin fraudare,
-                  decodificare de parole sau prin orice alte mijloace, inclusiv
-                  prin exploatarea unui mijloc pus la dispoziție în mod
-                  neintenționat de către _______. Orice încălcare a
-                  dispozițiilor din prezenta secțiune, poate conduce la blocare
-                  permanentă sau temporară a accesului la Site și la obligarea
-                  autorului acesteia la plata despăgubirilor pentru prejudiciul
-                  cauzat. Administratorul își rezervă dreptul de a dezvălui
-                  oricând orice informații a căror dezvăluire este necesară
-                  pentru a respecta orice lege, reglementare, procedură
-                  judiciară sau solicitare a organelor statului.
+                  {% for terms in object_list %} {{ terms.reguli_de_utilizare }}
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+            <div class="card accordion__single">
+              <div class="card-header accordion__header" id="headingFive">
+                <a
+                  class="btn btn-link accordion__link collapsed"
+                  data-toggle="collapse"
+                  data-target="#collapseFive"
+                  aria-expanded="true"
+                  aria-controls="collapseFive"
+                >
+                  PROPRIETATE INTELECTUALĂ ȘI INDUSTRIALĂ
+                </a>
+              </div>
+              <div
+                id="collapseFive"
+                class="collapse"
+                aria-labelledby="headingFive"
+                data-parent="#accordion"
+              >
+                <div class="card-body accordion__body">
+                  {% for terms in object_list %} {{ terms.proprietate_intelectuala }} {% endfor %}
+                </div>
+              </div>
+            </div>
+            <div class="card accordion__single">
+              <div class="card-header accordion__header" id="headingSix">
+                <a
+                  class="btn btn-link accordion__link collapsed"
+                  data-toggle="collapse"
+                  data-target="#collapseSix"
+                  aria-expanded="true"
+                  aria-controls="collapseSix"
+                >
+                  INFORMAȚIILE PREZENTATE PE SITE
+                </a>
+              </div>
+              <div
+                id="collapseSix"
+                class="collapse"
+                aria-labelledby="headingSix"
+                data-parent="#accordion"
+              >
+                <div class="card-body accordion__body">
+                  {% for terms in object_list %} {{ terms.informatiile_prezentate }} {% endfor %}
+                </div>
+              </div>
+            </div>
+            <div class="card accordion__single">
+              <div class="card-header accordion__header" id="headingSeven">
+                <a
+                  class="btn btn-link accordion__link collapsed"
+                  data-toggle="collapse"
+                  data-target="#collapseSeven"
+                  aria-expanded="true"
+                  aria-controls="collapseSeven"
+                >
+                  POLITICA DE VÂNZARE ONLINE
+                </a>
+              </div>
+              <div
+                id="collapseSeven"
+                class="collapse"
+                aria-labelledby="headingSeven"
+                data-parent="#accordion"
+              >
+                <div class="card-body accordion__body">
+                  {% for terms in object_list %} {{ terms.politica_de_vanzare }}
+                  {% endfor %}
                 </div>
               </div>
             </div>
@@ -243,7 +182,7 @@
                   aria-expanded="true"
                   aria-controls="collapseEight"
                 >
-                  PROPRIETATE INTELECTUALĂ ȘI INDUSTRIALĂ
+                  CONTUL
                 </a>
               </div>
               <div
@@ -253,182 +192,7 @@
                 data-parent="#accordion"
               >
                 <div class="card-body accordion__body">
-                  Conținutul Site-ului, astfel cum este definit în preambul,
-                  incluzând fără limitare toate textele și imaginile statice,
-                  imagini dinamice și/sau conținut multimedia, butoanele,
-                  simboluri comerciale, mărcile și/desenele sau modelele
-                  comerciale sunt proprietatea exclusivă a _______, acestuia
-                  fiindu-i rezervate toate drepturile obținute în acest sens în
-                  mod direct sau indirect (prin licențe de utilizare și/sau
-                  publicare). Utilizatorii/Clienții/Membrii pot folosi
-                  Conținutul Site-ului exclusiv în scop informativ, necomercial
-                  sau personal, fiindu-le interzisă copierea, preluarea,
-                  reproducerea, publicarea, transmiterea, vânzarea, distribuția
-                  parțială, integral sau modificată a conținutului acestui Site
-                  în alte scopuri, decât dacă se permite acest lucru prin
-                  excepții de la legile aplicabile privind dreptul de autor sau
-                  prin acordurile exprese din partea _______. În măsura în care
-                  doriți să utilizați, să preluați, să copiați ori să
-                  distribuiți o parte din Conținut, vă rugăm să ne transmiteți
-                  un mesaj la adresa de email  office@_______.ro  în care să
-                  precizați Conținutul pe care doriți să îl utilizați,
-                  modalitatea efectivă în care intenționați să îl utilizați și
-                  scopul avut în vedere, acestea reprezentând “Condițiile”
-                  acordului de utilizare. În lipsa unui acord scris prealabil
-                  din partea Operatorului, orice distribuire, comunicare,
-                  copiere, expunere, reproducere, publicare, acordare de licență
-                  de folosire, creare de opere derivate, transferare sau vânzare
-                  a Conținutului va fi considerată o încălcarea a Termenilor și
-                  Condițiilor, precum și a drepturilor de care beneficiază
-                  titularii drepturilor de proprietate intelectuală asupra
-                  Conținutului. Utilizatorii care publică/trimit orice fel de
-                  Conținut pe Site au obligația de a nu prejudicia în niciun mod
-                  drepturile de autor ale unei terțe persoane.
-                </div>
-              </div>
-            </div>
-            <div class="card accordion__single">
-              <div class="card-header accordion__header" id="headingNine">
-                <a
-                  class="btn btn-link accordion__link collapsed"
-                  data-toggle="collapse"
-                  data-target="#collapseNine"
-                  aria-expanded="true"
-                  aria-controls="collapseNine"
-                >
-                  INFORMAȚIILE PREZENTATE PE SITE
-                </a>
-              </div>
-              <div
-                id="collapseNine"
-                class="collapse"
-                aria-labelledby="headingNine"
-                data-parent="#accordion"
-              >
-                <div class="card-body accordion__body">
-                  Toate elementele folosite pentru descrierea Produselor (cum ar
-                  fi, dar nu limitat la, imagini statice ori dinamice, text
-                  descriptiv, prezentări grafice ori video) nu reprezintă o
-                  obligaţie contractuală din partea Vânzătorului, acestea fiind
-                  utilizate exclusiv cu titlu de prezentare şi informare. Din
-                  acest motiv, vă solicităm ca înainte de efectuarea unei
-                  Comenzi, să verificaţi cu atenţie caracteristicile Produsului
-                  astfel cum apar prezentate pe Site. _______ depune toate
-                  diligenţele pentru asigurarea corectitudinii şi
-                  completitudinii datelor şi informaţiilor publicate pe Site,
-                  inclusiv cu privire la descrierea Produselor, precum și
-                  preţurile indicate. Cu toate acestea,  persoanele care
-                  utilizează acest Site sunt informate cu privire la
-                  posibilitatea apariţiei unor erori. În măsura în care se
-                  constată că eroarea a afectat sau, după caz, influențat o
-                  Comandă sau Contractul încheiat, _______ va informa Clientul
-                  în cel mai scurt timp posibil în vederea reconfirmării
-                  Comenzii/a valabilităţii Contractului sau, eventual, anularea
-                  acesteia/acestuia. Produsele ce fac obiectul vânzării în
-                  cadrul unei promoţii sau campanii de orice tip se vor supune
-                  şi termenilor şi condiţiilor aplicabile respectivei campanii
-                  sau promoţii şi care va fi anunţată în mod corespunzător în
-                  prealabil. Utilizatorii/Clienții/Membrii sunt rugaţi să
-                  citească termenii şi condiţiile aplicabile unei anumite
-                  campanii sau promoţii înainte de efectuarea unei Comenzi cu
-                  privire la Produse care fac parte din respectiva campanie sau
-                  promoţie.
-                </div>
-              </div>
-            </div>
-            <div class="card accordion__single">
-              <div class="card-header accordion__header" id="headingNine">
-                <a
-                  class="btn btn-link accordion__link collapsed"
-                  data-toggle="collapse"
-                  data-target="#collapseNine"
-                  aria-expanded="true"
-                  aria-controls="collapseNine"
-                >
-                  POLITICA DE VÂNZARE ONLINE
-                </a>
-              </div>
-              <div
-                id="collapseNine"
-                class="collapse"
-                aria-labelledby="headingNine"
-                data-parent="#accordion"
-              >
-                <div class="card-body accordion__body">
-                  Accesul pe Site în vederea efectuării unei Comenzii îi este
-                  permis oricărui Utilizator care acţionează cu un scop legitim
-                  şi care are intenţia de a achiziţiona de la Vânzător unul sau
-                  mai multe Produse, cu respectarea prezentului Document. Pot
-                  efectua Comenzi pe Site numai persoanele care au împlinit
-                  vârsta de 18 ani la data efectuării Comenzii şi doresc ca
-                  livrarea Produselor să aibă loc pe teritoriul Uniunii
-                  Europene, in urmatoarele tari _____________. Nu exista o
-                  valoare minima pentru efectuarea unei comezi pe Site. _______
-                  comercializează Produsele online în sistem en-detail (comerț
-                  cu amănuntul), nefiind destinate revânzării sau distribuției
-                  în scopuri comerciale. _______îşi rezervă dreptul de a refuza
-                  accesul unor Utilizatori/ Membrii/Clienți la o parte sau la
-                  toate funcțiile aferente comercializării online, cât și de a
-                  restricționa procesarea și/sau livrarea unei Comenzi în cazul
-                  în care există suspiciuni de fraudă din partea acestora sau
-                  dacă acesta are un comportament care poate prejudicia
-                  interesele _______. Postarea opiniilor referitoare la produse
-                  sau comunicarea  cu _______se poate realiza prin utilizarea
-                  datelor menționate la secțiunea “Contact” din Site. Vor fi
-                  înlăturate din Site sau ignorate, păreri sau adresări ce
-                  conțin injurii sau un limbaj neadvecat, _______având
-                  libertatea de a gesiona informațiile primite fără a fi nevoit
-                  să justifice acțiunile sale.
-                </div>
-              </div>
-            </div>
-            <div class="card accordion__single">
-              <div class="card-header accordion__header" id="headingNine">
-                <a
-                  class="btn btn-link accordion__link collapsed"
-                  data-toggle="collapse"
-                  data-target="#collapseNine"
-                  aria-expanded="true"
-                  aria-controls="collapseNine"
-                >
-                  CONTUL
-                </a>
-              </div>
-              <div
-                id="collapseNine"
-                class="collapse"
-                aria-labelledby="headingNine"
-                data-parent="#accordion"
-              >
-                <div class="card-body accordion__body">
-                  În vederea achiziţiei unui Produs trebuie să aveți un Cont.
-                  Contul se crează fie voluntar, urmând a fi completate
-                  câmpurile obligatorii cu datele personale solicitate – adresa
-                  e-mail și parola, fie de către operatorul nostru - în numele
-                  dvs, atunci când preferați să comandați produse prin telefon,
-                  operatorul nostru urmând a prelua și introduce datele
-                  personale în Cont. In prezent acest serviciu este indisponibil
-                  Contul se poate crea și prin prin intermediul unei rețele
-                  sociale (cu titlu de exemplu: Facebook, Gmail etc) datele dvs.
-                  de autentificare (adresa de email și parolă) vor a fi
-                  importate din contul existent pe aceste rețele. Pentru a afla
-                  ce date cu caracter personal colectăm pentru crearea Contului,
-                  cum le folosim și cum puteți să vă exercitați drepturile, vă
-                  rugăm să consultați documentul Protecția datelor cu caracter
-                  personal disponibil aici 
-                  https://www._______.ro/protectia-datelor-personale Dacă nu
-                  sunteți consumator (ci reprezentant al unei persoane juridice)
-                  și comandați produse pentru o entitate juridică pe care o
-                  reprezentanți și în numele căreia acționați, va fi necesar să
-                  ne furnizați informații suplimentare despre aceasta entitate
-                  (denumire, sediu social, număr de inregistrare, cod  de
-                  identificare fiscală). În orice comunicare cu noi în numele
-                  persoanei juridice pe care o reprezentați veți acționa în
-                  numele acesteia și veți obliga din punct de vedere legal
-                  respectiva entitate. În urma creării Contului, Clientul va
-                  primi pe adresa de e-mail indicată un link de confirmare a
-                  Contului care va trebui accesat de către Client pentru
-                  finalizarea procedurii de înregistrare.
+                  {% for terms in object_list %} {{ terms.contul }} {% endfor %}
                 </div>
               </div>
             </div>
@@ -451,343 +215,248 @@
                 data-parent="#accordion"
               >
                 <div class="card-body accordion__body">
-                  În vederea achiziționării de Produse puteți transmite o
-                  Comandă către noi urmând procesul de comandă de pe site sau
-                  prin telefon (la numarul de tel. ________). Comanda prin
-                  intermediul Site-ului se face prin intermediul următorilor
-                  pași: - Selectarea Produsului/Produselor şi adaugarea lor în
-                  coșul de cumpărături prin apăsarea butonului „Adaugă în coş”.
-                  - Apasarea butonului “ Finalizare comandă”, urmând a se
-                  deschide o pagina pentru autentificarea în Cont sau
-                  introducerea datelor personale, în cazul în care nu sunteți de
-                  deja autentifcați cont sau nu aveți datele introduse - nume,
-                  prenume, adresa de mail, telefon contact, cele privind adresa
-                  de facturare și de livrare, modalitatea de plata dorită,
-                  aplicarea eventualelor discounturi ca urmare a deținerii unui
-                  cod voucher, cod de discount sau card cadou, bifarea rubricii
-                  „Sunt de acord cu Termenii și Condițiile”, exprimarea sau nu a
-                  acordului pentru primirea de Newsletter și modalitatea de
-                  primire. - (iii)Transmiterea comenzii către _______. Clientul
-                  trebuie să se asigure că datele comenzii și informațiile
-                  oferite pentru livrare și contact sunt corecte. Pe parcursul
-                  procesului de comandă, înainte de a transmite comanda  puteți
-                  verifica, modifica sau corecta eventuale erori, să revizuiți
-                  lista produselor comandate. Adăugarea unui Produs în coșul de
-                  cumpărături, în lipsa finalizării Comenzii, nu atrage după
-                  sine înregistrarea acelei Comenzi, implicit nici rezervarea
-                  automată a Produsului. Comanda reprezintă oferta dumneavoastră
-                  de a achiziționa produsele, fiind supusă confirmării de către
-                  _______. După efectuarea Comenzii, Clientul va primi un mesaj
-                  de notificare prin e-mail cu privire la înregistrarea
-                  Comenzii. De asemenea, notificarea privind înregistrarea
-                  Comenzii va cuprinde numărul de comanda (alocat fiecaieri
-                  comenzi) în sistemul _______, detaliile Produselor comandate,
-                  preţul total al Comenzii, inclusiv costurile de livrare.
-                  Notificarea primită de către Client după efectuarea Comenzii
-                  cu privire la preluarea respectivei Comenzi are rol de
-                  informare și nu reprezintă acceptarea Comenzii de către noi.
-                  După verificarea stocului de Produse, _______confimă prin
-                  e-mail disponibilitatea Produselor comandate, termenul de
-                  livrare şi, respectiv, acceptarea Comenzii. Acceptarea
-                  Comenzii semnifică încheierea contractului între dumeavoastră
-                  și _______, din Contract făcând parte atât prevederile
-                  prezentului Document cât și orice înțelegeri ulterioare
-                  intervenite între Client şi _______cu privire la o Comandă,
-                  indiferent dacă acestea sunt sau nu cuprinse într-un înscris
-                  electronic sau material. Comanda se poate plasa și prin
-                  intermediul telefonului - oferind operatorului nostru datele
-                  necesare pentru a vă deschide în numele dvs. un cont de
-                  utilizator, inclusiv o adresă de e- mail prin intermediul
-                  căreia să se poată realiza acceptarea comenzii dumneavoastră
-                  și confirmarea ei. Acest e-mail va conține și link-uri către
-                  Prelucrarea datelor cu caracter personal și prezentul Document
-                  pe care vă invităm să le studiați. Acceptarea comenzii şi,
-                  respectiv, existenţa unui contract între dumneavoastră şi noi
-                  este implicită şi probată de înregistrarea convorbirii
-                  telefonice. In cazul in care ne aflam in imposibilitatea de a
-                  trimite comanda plasata pe www.______.ro prin compania de
-                  curierat aleasa de catre dvs (motive tehnice, volum crescut ce
-                  ar conduce la cresterea timpului), ne rezervam dreptul de a
-                  trimite comanda, cu o alta companie de curierat decat cea
-                  selectata in pagina de finalizare a comenzii. _______ poate
-                  anula Comanda lansată de către Client, cu notificarea
-                  concomitentă sau ulterioară a Clientului, fără a îi putea fi
-                  atrasă răspunderea pentru o astfel de acţiune, în următoarele
-                  cazuri: (i) neacceptarea de către banca emitentă a cardului
-                  Clientului, a Tranzacției, în cazul plății online; (ii)
-                  invalidarea Tranzacției de către procesatorul de carduri
-                  agreat de _______, în cazul plății online; (iii) datele
-                  furnizate de către Client pe Site sunt incomplete și/sau
-                  incorecte; (iv) solicitarea expresă a Clientului de a renunţa
-                  la Comandă, exprimată în scris; (v) imposibilitatea tehnică de
-                  procesare a Comenzii la nivelul Site-ului, din motive
-                  independente de Vânzător; (vi) oricare dintre termenii şi
-                  condiţiile din prezentul document nu au fost respectate
-                  întocmai de către Client.
+                  {% for terms in object_list %} {{ terms.comanda }} {% endfor %}
                 </div>
               </div>
             </div>
             <div class="card accordion__single">
-              <div class="card-header accordion__header" id="headingNine">
+              <div class="card-header accordion__header" id="headingTen">
                 <a
                   class="btn btn-link accordion__link collapsed"
                   data-toggle="collapse"
-                  data-target="#collapseNine"
+                  data-target="#collapseTen"
                   aria-expanded="true"
-                  aria-controls="collapseNine"
+                  aria-controls="collapseTen"
                 >
                   LIVRAREA. TRANSFERUL PROPRIETĂŢII ŞI AL RISCURILOR
                 </a>
               </div>
               <div
-                id="collapseNine"
+                id="collapseTen"
                 class="collapse"
-                aria-labelledby="headingNine"
+                aria-labelledby="headingTen"
                 data-parent="#accordion"
               >
                 <div class="card-body accordion__body">
-                  Livrarea Produselor se face prin curier oriunde în tarile din
-                  Uniunea Europeana stipulate in prezentul inscris. Termenul de
-                  livrare este indicat în e-mail-ul de acceptare a Comenzii,
-                  respectiv într-un interval de  4-5 zile lucrătoare, fără a
-                  depăși termenul de 14 de zile. Clientul va putea completa în
-                  formularul de Comandă o singură adresă de livrare, pentru
-                  fiecare Comandă efectuată. Proprietatea şi riscurile asupra
-                  Produselor vor fi transferate la livrare, însă condiționat de
-                  efectuarea plății de către Client. Nu ne asumăm răspunderea
-                  pentru pierderi ce pot apărea din cazua întârzierii livrării –
-                  dacă acestea sunt cauzate de circumstanțe ce nu țin de noi sau
-                  în privința cărora nu am putut lua măsuri rezonabile pentru a
-                  preîntâmpina întârzierea (acțiuni guvernamentale, impedimente
-                  de forță majoră, războaie, acte de terorism, proteste,
-                  răscoale, tulburări civile, incendii, explozii, inundații,
-                  epidemii, greve.) În cazul în care produsul nu poate fi livrat
-                  _______se obligă să informeze Clientul despre aceasta
-                  indisponibilitate, iar sumele achitate în avand urmând a fi
-                  rambursate în termen de maximum 30 de zile. Valoarea maxima a
-                  daunelor-interese ce pot fi platite de _______fața de orice
-                  Client în cazul nelivrării sau a livrării necorespunzatoare
-                  este valoarea sumei încasate de _______de la acest Client.
+                  {% for terms in object_list %} {{ terms.livrarea }} {% endfor %}
                 </div>
               </div>
             </div>
             <div class="card accordion__single">
-              <div class="card-header accordion__header" id="headingNine">
+              <div class="card-header accordion__header" id="headingEleven">
                 <a
                   class="btn btn-link accordion__link collapsed"
                   data-toggle="collapse"
-                  data-target="#collapseNine"
+                  data-target="#collapseEleven"
                   aria-expanded="true"
-                  aria-controls="collapseNine"
+                  aria-controls="collapseEleven"
                 >
-                  FACTURARE ŞI PLATĂ
+                  TRANSFERUL PROPRIETATII
                 </a>
               </div>
               <div
-                id="collapseNine"
+                id="collapseEleven"
                 class="collapse"
-                aria-labelledby="headingNine"
+                aria-labelledby="headingEleven"
                 data-parent="#accordion"
               >
                 <div class="card-body accordion__body">
-                  Prețul Produselor este cel menționat pe Site și include T.V.A.
-                  în cota aplicabilă conform legislației în vigoare. Costul de
-                  livrare se percepe suplimentar față de prețul produselor.
-                  Livrarea Produselor va fi contra-cost sau gratuită, în funcție
-                  de condițiile aplicabile Comenzii ori de campania desfăşurată
-                  de _______la data Comenzii. Produsele comandate pot fi plătite
-                  în numerar, în moneda locală, la livrare (ramburs), online -
-                  cu cardul prin platforma disponibilă pe Site. De asemenea,
-                  Comanda  poate fi achitată parțial sau integral cu un card
-                  cadou sau voucher emis de _______. Datele cardului de plata nu
-                  vor fi accesibile _______si nici nu vor fi stocate de catre de
-                  _______, ci doar de către procesatorul de plați integrat în
-                  Site și de către instituția de autorizare a Tranzactiei sau o
-                  altă entitate autorizată să presteze servicii de stocare a
-                  datelor de identificare a cardului, despre a carei identitate
-                  Clientul/ Utilizatorul/ Cumparatorul va fi informat, anterior
-                  introducerii datelor. Depunem toate eforturile pentru ca
-                  Prețul menționat pe Site să fie corect și complet. În situația
-                  în care constatăm existența unei erori nu suntem obligați să
-                  va furnizăm acel produs la prețul menționat greșit, urmând a
-                  va restui orice suma încasată deja în lipsa unui acord al dvs.
-                  de a achziționa Produsul la prețul corect. Vânzătorul va emite
-                  către Client o factură pentru Produsele livrate, iar Clientul
-                  este obligat să furnizeze toate informațiile necesare emiterii
-                  facturii conform legislației în vigoare. Vânzătorul va
-                  transmite Clientului factura aferentă Comenzii de Produse,
-                  precum şi pentru orice alte costuri aferente Comenzii, în
-                  format material sau în format electronic, prin includerea
-                  facturii în pachetul care cuprinde Produsele livrate,
-                  respectiv prin e-mail, la adresa menționată de Client.
+                  {% for terms in object_list %} {{ terms.transferul_proprietatii }} {% endfor %}
                 </div>
               </div>
             </div>
             <div class="card accordion__single">
-              <div class="card-header accordion__header" id="headingNine">
+              <div class="card-header accordion__header" id="headingTwelve">
                 <a
                   class="btn btn-link accordion__link collapsed"
                   data-toggle="collapse"
-                  data-target="#collapseNine"
+                  data-target="#collapseTwelve"
                   aria-expanded="true"
-                  aria-controls="collapseNine"
+                  aria-controls="collapseTwelve"
                 >
-                  CONFORMITATEA PRODUSELOR ȘI GARANȚII
+                  FACTURAREA
                 </a>
               </div>
               <div
-                id="collapseNine"
+                id="collapseTwelve"
                 class="collapse"
-                aria-labelledby="headingNine"
+                aria-labelledby="headingTwelve"
                 data-parent="#accordion"
               >
                 <div class="card-body accordion__body">
-                  Dacă sunteți consumator, iar la Livrare constatați că un
-                  produs  nu corespunde Comenzii dvs. (acceptată și confirmată
-                  de noi potrivit acestui Document), ne puteți solicita (a) să
-                  îl reparăm sau (b) să îl înlocuim fără vreo plată din partea
-                  dumeavoastră, în 15 zile calendaristice de când ne-ați
-                  informat (dacă repararea sau înlocuirea se aplică acelui tip
-                  de produs și e posibilă) sau (c) să vă restituim preţul plătit
-                  (cu condiţia să ne returnaţi produsul pe cheltuiala noastră -
-                  când vă solicităm acest lucru). Pentru mai multe detalii
-                  referitoare la returul produselor  în termen de 30 de zile de
-                  la livrarea acestora vă rugăm să accesați documentul Politica
-                  de retur disponibil aici: https://www._______.ro/retur-gratuit
-                  În general, produsele sunt însoţite de o garanţie legală de 2
-                  ani de la data la care vi le livrăm și de garanția
-                  producătorului (acolo unde este cazul). Fac excepție produsele
-                  a căror durată medie de utilizare este mai mică de 2 ani, caz
-                  în care termenul de garanție se reduce la această durată.
-                  Garanția oferită nu vă afectează celelalte drepturi stabilite
-                  de legislația aplicabilă. Dacă nu sunteți consumator: trebuie
-                  să verificaţi toate produsele imediat ce le-aţi primit şi, în
-                  5 zile lucrătoare de la livrare, să ne informați în scris
-                  privind orice neconformitate a produselor. Dacă nu primim o
-                  asemenea informare din partea dumeavoastră în termenul
-                  indicat, produsele vor fi considerate acceptate de
-                  dumeavoastră și nu veți mai putea invoca neconformități ale
-                  acestora (cum ar fi vicii aparente, vicii ascunse sau alte
-                  deficiențe, etc.). Pentru orice întrebări legate de garanţie,
-                  vă rugăm să ne contactaţi la adresa de
-                  email contact@_______.ro sau prin intemediul paginii de
-                  Contact a Site-ului disponibil aici
-                  https://www._______.ro/contact
+                  {% for terms in object_list %} {{ terms.facturare_plata }} {% endfor %}
                 </div>
               </div>
             </div>
+            
             <div class="card accordion__single">
-              <div class="card-header accordion__header" id="headingNine">
+              <div class="card-header accordion__header" id="headingThirteen">
                 <a
                   class="btn btn-link accordion__link collapsed"
                   data-toggle="collapse"
-                  data-target="#collapseNine"
+                  data-target="#collapseThirteen"
                   aria-expanded="true"
-                  aria-controls="collapseNine"
+                  aria-controls="collapseThirteen"
                 >
-                  DREPTUL DE DENUNȚARE UNILATERALĂ (RETRAGERE)
+                  CONFORMITATEA PRODUSELOR
                 </a>
               </div>
               <div
-                id="collapseNine"
+                id="collapseThirteen"
                 class="collapse"
-                aria-labelledby="headingNine"
+                aria-labelledby="headingThirteen"
                 data-parent="#accordion"
               >
                 <div class="card-body accordion__body">
-                  În cazul în care efectuați o Comandă prin intermediul
-                  Site-ului  puteți anula Comanda în orice moment înainte de
-                  încheierea Contractului, conform prezenţilor Termeni şi
-                  Condiţii. Consumatorul are și dreptul de a denunţa unilateral
-                  Contractul în termen de 14 zile de la livrarea fizică a
-                  Produsului, fără a fi nevoit să justifice decizia de retragere
-                  şi fără a suporta alte costuri decât cele stabilite de lege.
-                  Dacă ați comandat printr-o singură comandă mai multe produse
-                  care vor fi livrate separat, termenul expiră după 14 zile
-                  calendaristice de când ați intrat în posesia fizică a
-                  ultimului produs. Pentru exercitarea dreptului de retragere,
-                  Clientul va îndeplini cumulativ următoarele obligații:  (i) va
-                  transmite către _______în termen de 30 zile decizia sa de
-                  retragere din Contract fie folosind modelul de formular de
-                  retragere disponibil
-                  aici: https://www._______.ro/formular-retragere sau orice alta
-                  declarație neechivocă în care își exprimă decizia de retragere
-                  din Contract, pe care o veti transmite prin email la
-                  adresa contact@_______.ro, fie completând online formularul de
-                  retur https://www._______.ro/frontendUsers/myReturnedOrders -
-                  disponibil din Contul dumneavoastra, marcând rubrica
-                  referitoare la dreptul de retragere, urmând a primi
-                  confirmarea trimiterii către _______prin e-mail la adresa
-                  comunicată la momentul efectuării Comenzii. (ii) va returna
-                  Produsul în privința căruia se retrage din Contract  către
-                  _______la adresa: ___________, Sector __, Bucuresti,  în cel
-                  mai scurt timp cu putinta.   _______ poate oferi acoperirea
-                  tuturor costurilor de transport pentru produsele returnate
-                  (indiferent de motivul returnarii) ca și procedura de
-                  fidelizare daca returul se solicită și se proceseaza prin
-                  secțiunea existentă în Cont. In cazul în care Comanda este
-                  achitată, _______va rambursa suma plătită de dvs., în maxim 14
-                  (paisprezece) zile de la data informarii de către Cumpărator
-                  asupra deciziei sale de retragere din Contract, numai prin
-                  transfer bancar în contul din care a fost efectuată plata.
-                  _______va putea amâna rambursarea sumei până la primirea
-                  Bunurilor vândute sau până la primirea unei dovezi conform
-                  căreia acestea au fost expediate, în cazul în care nu s-a
-                  oferit sa recupereze el insuși Bunurile (se va lua data cea
-                  mai recenta). În cazul diminuarii valorii produselor – din
-                  cauza modului în care le-ați manipulat sau folosit (în alt mod
-                  decât pentru determinarea naturii, calităţilor şi funcţionării
-                  produselor) vă vom putea rambursa parțial suma pe care am
-                  încasat-o de la dumneavoastră, putând scădea contravaloarea
-                  diminuării produselor respective. _______ își rezervă dreptul
-                  de a nu accepta retragerea din contract în cazul în care la
-                  returnarea produselor  se constată că acestea nu se află în
-                  starea în care au fost livrate (conțin urme de folosire,
-                  lipsesc etichetele, emblemele, alte elemente de siguranță sau
-                  componente).  Nu pot face obiectul retragerii din contract
-                  produsele care, prin natura lor, nu pot fi returnate sau care
-                  se pot degrada ori deteriora rapid, cum ar fi produse de
-                  lenjeria intimă, costume de baie, produse din piele.
+                  {% for terms in object_list %} {{ terms.conformitatea_produselor }} {% endfor %}
                 </div>
               </div>
             </div>
+
             <div class="card accordion__single">
-              <div class="card-header accordion__header" id="headingNine">
+              <div class="card-header accordion__header" id="headingFourteen">
                 <a
                   class="btn btn-link accordion__link collapsed"
                   data-toggle="collapse"
-                  data-target="#collapseNine"
+                  data-target="#collapseFourteen"
                   aria-expanded="true"
-                  aria-controls="collapseNine"
+                  aria-controls="collapseFourteen"
                 >
-                  CONFIDENŢIALITATEA ŞI PROTECŢIA DATELOR CU CARACTER PERSONAL
+                  DENUNTARE
                 </a>
               </div>
               <div
-                id="collapseNine"
+                id="collapseFourteen"
                 class="collapse"
-                aria-labelledby="headingNine"
+                aria-labelledby="headingFourteen"
                 data-parent="#accordion"
               >
                 <div class="card-body accordion__body">
-                  _______va asigura confidențialitatea tuturor datelor furnizate
-                  în scopul creării Contului și livrarii Serviciilor. Aveţi
-                  obligaţia de a ne comunica în cel mai scurt timp posibil dacă
-                  aveți orice indicii sau suspiciuni că un terţ ar putea afecta
-                  securitatea Contului dumneavoastră. Pentru informații
-                  detaliate referitoare la politica privind protecţia datelor cu
-                  caracter personal, vă rugăm să accesaţi secţiunea “PROTECŢIA
-                  DATELOR CU CARACTER PERSONAL” disponibilă pe Site la
-                  adresa: https://www._______.ro/protectia-datelor-personale
-                  Politica de cookie-uri servește exclusiv pentru buna
-                  funcționare a Site-ului, acest instrument fiind folosit în
-                  conformitate cu dispozițiile legale. Pentru informaţii
-                  detaliate privind politica de cookies, vă rugăm să accesaţi
-                  secţiunea „POLITICA DE COOKIES” disponibilă pe Site la
-                  adresa:   https://www._______.ro/politica-utilizare-cookieuri
+                  {% for terms in object_list %} {{ terms.dreptu_denuntare }} {% endfor %}
                 </div>
               </div>
             </div>
+
+            <div class="card accordion__single">
+              <div class="card-header accordion__header" id="headingFifthteen">
+                <a
+                  class="btn btn-link accordion__link collapsed"
+                  data-toggle="collapse"
+                  data-target="#collapseFifthteen"
+                  aria-expanded="true"
+                  aria-controls="collapseFifthteen"
+                >
+                  PRELUCRAREA DATELOR
+                </a>
+              </div>
+              <div
+                id="collapseFifthteen"
+                class="collapse"
+                aria-labelledby="headingFifthteen"
+                data-parent="#accordion"
+              >
+                <div class="card-body accordion__body">
+                  {% for terms in object_list %} {{ terms.gdpr }} {% endfor %}
+                </div>
+              </div>
+            </div>
+
+            <div class="card accordion__single">
+              <div class="card-header accordion__header" id="headingSixteen">
+                <a
+                  class="btn btn-link accordion__link collapsed"
+                  data-toggle="collapse"
+                  data-target="#collapseSixteen"
+                  aria-expanded="true"
+                  aria-controls="collapseSixteen"
+                >
+                  PROMOVARE PRODUSE SI OFERTE
+                </a>
+              </div>
+              <div
+                id="collapseSixteen"
+                class="collapse"
+                aria-labelledby="headingSixteen"
+                data-parent="#accordion"
+              >
+                <div class="card-body accordion__body">
+                  {% for terms in object_list %} {{ terms.promovare_produse_si_oferte }} {% endfor %}
+                </div>
+              </div>
+            </div>
+
+            <div class="card accordion__single">
+              <div class="card-header accordion__header" id="headingSeventeen">
+                <a
+                  class="btn btn-link accordion__link collapsed"
+                  data-toggle="collapse"
+                  data-target="#collapseSeventeen"
+                  aria-expanded="true"
+                  aria-controls="collapseSeventeen"
+                >
+                  RASPUNDERE  
+                </a>
+              </div>
+              <div
+                id="collapseSeventeen"
+                class="collapse"
+                aria-labelledby="headingSeventeen"
+                data-parent="#accordion"
+              >
+                <div class="card-body accordion__body">
+                  {% for terms in object_list %} {{ terms.raspundere }} {% endfor %}
+                </div>
+              </div>
+            </div>
+
+            <div class="card accordion__single">
+              <div class="card-header accordion__header" id="headingEighteen">
+                <a
+                  class="btn btn-link accordion__link collapsed"
+                  data-toggle="collapse"
+                  data-target="#collapseEighteen"
+                  aria-expanded="true"
+                  aria-controls="collapseEighteen"
+                >
+                  SESIZARI
+                </a>
+              </div>
+              <div
+                id="collapseEighteen"
+                class="collapse"
+                aria-labelledby="headingEighteen"
+                data-parent="#accordion"
+              >
+                <div class="card-body accordion__body">
+                  {% for terms in object_list %} {{ terms.sesizari }} {% endfor %}
+                </div>
+              </div>
+            </div>
+
+            <div class="card accordion__single">
+              <div class="card-header accordion__header" id="headingNineteen">
+                <a
+                  class="btn btn-link accordion__link collapsed"
+                  data-toggle="collapse"
+                  data-target="#collapseNineteen"
+                  aria-expanded="true"
+                  aria-controls="collapseNineteen"
+                >
+                  ULTIMA LEGISLATIE
+                </a>
+              </div>
+              <div
+                id="collapseNineteen"
+                class="collapse"
+                aria-labelledby="headingNineteen"
+                data-parent="#accordion"
+              >
+                <div class="card-body accordion__body">
+                  {% for terms in object_list %} {{ terms.ultima_legislatie }} {% endfor %}
+                </div>
+              </div>
+            </div>
+            
           </div>
         </div>
       </div>

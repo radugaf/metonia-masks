@@ -1,11 +1,9 @@
-{% load cart_template_tags %}
-{% load static %}
+{% load cart_template_tags %} {% load static %}
 
 <header class="header headery-style-1">
   <div class="header-top header-top-1">
     <div class="container">
       <div class="row no-gutters align-items-center">
-      
         <div class="col-lg-8 d-flex align-items-center flex-column flex-lg-row">
           <ul class="social social-round mr--20">
             <li class="social__item">
@@ -19,7 +17,10 @@
               </a>
             </li>
             <li class="social__item">
-              <a href="https://www.facebook.com/metanoiamasks" class="social__link__facebook">
+              <a
+                href="https://www.facebook.com/metanoiamasks"
+                class="social__link__facebook"
+              >
                 <i class="fa fa-facebook"></i>
               </a>
             </li>
@@ -29,7 +30,10 @@
               </a>
             </li>
             <li class="social__item">
-              <a href="https://www.instagram.com/metanoia_masks/" class="social__link__instagram">
+              <a
+                href="https://www.instagram.com/metanoia_masks/"
+                class="social__link__instagram"
+              >
                 <i class="fa fa-instagram"></i>
               </a>
             </li>
@@ -37,108 +41,107 @@
         </div>
 
         <div class="col-lg-4">
-          <div class="header-top-nav d-flex justify-content-lg-end justify-content-center">
+          <div
+            class="header-top-nav d-flex justify-content-lg-end justify-content-center"
+          >
             <div class="user-info header-top-nav__item">
               <div class="dropdown header-top__dropdown">
-                <a class="dropdown-toggle" id="userID" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a
+                  class="dropdown-toggle"
+                  id="userID"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
                   My Account
                   <i class="fa fa-angle-down"></i>
                 </a>
                 <div class="dropdown-menu" aria-labelledby="userID">
                   {% if request.user.is_authenticated %}
-                  <a class="dropdown-item" href="{% url 'account_logout' %}">Log Out</a>
+                  <a class="dropdown-item" href="{% url 'account_logout' %}"
+                    >Log Out</a
+                  >
                   {% else %}
-                  <a class="dropdown-item" href="{% url 'account_signup' %}">Register</a>
-                  <a class="dropdown-item" href="{% url 'account_login' %}">Log In</a>
+                  <a class="dropdown-item" href="{% url 'account_signup' %}"
+                    >Register</a
+                  >
+                  <a class="dropdown-item" href="{% url 'account_login' %}"
+                    >Log In</a
+                  >
                   {% endif %}
                 </div>
-
               </div>
             </div>
           </div>
         </div>
-
-
       </div>
     </div>
   </div>
-  <div class="header-middle header-top-1">
-    <div class="container">
-      <div class="row no-gutters align-items-center">
-        <div class="col-md-5 col-sm-6 order-lg-1 order-2">
 
-        </div>
-        {% comment %} <div class="col-lg-2 col-12 order-lg-2 order-1 text-center">
-          <a href="/" class="logo-box mb-md--30">
-            <img src="{% static 'assets/img/logo/logo123.png' %}" alt="logo" />
-          </a>
-        </div> {% endcomment %}
-        <div class="col-lg-5 col-md-7 col-sm-6 order-lg-3 order-3">
-          <div class="header-toolbar">
-            <ul class="header-toolbar-icons">
-              {% comment %} <li class="mini-cart-icon">
-                <div class="mini-cart mini-cart--1">
-                  <a class="mini-cart bordered-icon" href="{% url 'core:order-summary' %}" id="cartDropdown">
-                    <span class="mini-cart__count">{{ request.user|cart_item_count }}</span>
-                    <i class="icon_cart_alt mini-cart__icon" href="{% url 'core:order-summary' %}"></i>
-                  </a>
-                </div>
-              </li> {% endcomment %}
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+  
 
   <div class="header-bottom header-top-1 position-relative navigation-wrap fixed-header">
     <div class="container position-static">
       <div class="row">
-          <div>   
-          </div>
+
         <div class="col-12 position-static text-center">
           <nav class="main-navigation">
             <ul class="mainmenu">
-            <li href="/" class="mainmenu__item logo-box">
-            
-
-            </li>
+              <li><img
+          src="{% static 'assets/img/logo/logo123.png' %}"
+          alt="logo"
+          id="custom-log-mobile"
+        /></li>
+              <li href="/" class="mainmenu__item logo-box"></li>
               <li class="mainmenu__item">
                 <a href="/" class="mainmenu__link">Home</a>
               </li>
               <li class="mainmenu__item">
-                <a href="{% url 'core:shop-list' %}" class="mainmenu__link">All Products</a>
+                <a href="{% url 'core:shop-list' %}" class="mainmenu__link"
+                  >All Products</a
+                >
               </li>
               <li class="mainmenu__item">
-                <a href="{% url 'core:about' %}" class="mainmenu__link">About Us</a>
+                <a href="{% url 'core:about' %}" class="mainmenu__link"
+                  >About Us</a
+                >
               </li>
               <li class="mainmenu__item">
                 <a href="/sell-with-us" class="mainmenu__link">Sell to Us</a>
               </li>
               <li class="mainmenu__item mini-cart-icon">
                 <div class="mini-cart mini-cart--1">
-                  <a class="mini-cart bordered-icon" href="{% url 'core:order-summary' %}">
-                    <span class="mini-cart__count">{{ request.user|cart_item_count }}</span>
+                  <a
+                    class="mini-cart bordered-icon"
+                    href="{% url 'core:order-summary' %}"
+                  >
+                    <span class="mini-cart__count"
+                      >{{ request.user|cart_item_count }}</span
+                    >
                     <i class="icon_cart_alt mini-cart__icon"></i>
                   </a>
                 </div>
-              </li> 
-
-              
+              </li>
             </ul>
           </nav>
         </div>
       </div>
-      <div id="custom-row">
-      <img src="{% static 'assets/img/logo/logo123.png' %}" alt="logo" id="custom-log-mobile"/>
-            </div>
+      {% comment %} <div id="custom-row">
+        <img
+          src="{% static 'assets/img/logo/logo123.png' %}"
+          alt="logo"
+          id="custom-log-mobile"
+        />
+      </div> {% endcomment %}
       <div class="row no-gutters">
         <div class="col-12">
           <div class="mobile-menu"></div>
         </div>
       </div>
-
     </div>
   </div>
+
+  
+
 </header>
 <!-- Header Area End -->

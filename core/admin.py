@@ -59,6 +59,10 @@ class AddressAdmin(admin.ModelAdmin):
     list_filter = ['default', 'address_type', 'country']
     search_fields = ['user', 'street_address', 'apartment_address', 'zip']
 
+class SellWithUsAdmin(admin.ModelAdmin):
+    list_display = [ 'full_name', 'email', 'phone', 'stare', 'pret']
+    search_fields = [ 'full_name', 'email', 'phone', 'stare', 'pret']
+
 
 admin.site.register(Contact)
 admin.site.register(Item, ItemAdmin)
@@ -74,4 +78,4 @@ admin.site.register(Privacy)
 admin.site.register(Refunds)
 admin.site.register(SellWithUs)
 admin.site.register(Gallery)
-admin.site.register(SellWIthUsTwo)
+admin.site.register(SellWIthUsTwo, SellWithUsAdmin)

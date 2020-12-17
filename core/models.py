@@ -87,6 +87,9 @@ class SellWIthUsTwo(models.Model):
     image_3 = models.ImageField(null=True)
     image_4 = models.ImageField(null=True) 
     image_5 = models.ImageField(null=True)
+
+    def __str__(self):
+        return self.full_name
     
 
 class OrderItem(models.Model):
@@ -236,6 +239,9 @@ class Terms(models.Model):
     raspundere = models.TextField(null=True) 
     sesizari = models.TextField(null=True) 
     ultima_legislatie = models.TextField(null=True) 
+
+    def __str__(self):
+        return self.title_terms
 
 
 class Privacy(models.Model):
