@@ -17,7 +17,8 @@ from .views import (
     Refunds,
     SellWithUs,
     Gallery,
-    sell_with_us_two_form
+    sell_with_us_two_form,
+    ThankYouView
 )
 from . import views
 app_name = 'core'
@@ -43,6 +44,8 @@ urlpatterns = [
     path('terms/', Terms.as_view(), name='terms'),
     path('privacy/', Privacy.as_view(), name='privacy'),
     path('refunds/', Refunds.as_view(), name='refunds'),
+    path('thankyou/', ThankYouView.as_view(), name='thankyou'),
+
     # path('sellwithus/', SellWithUs.as_view(), name='sellwithus'),
     path('gallery/', Gallery.as_view(), name='gallery' )
 

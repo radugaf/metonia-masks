@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import SellWIthUsTwo, Gallery, SellWithUs, Terms, Privacy, Refunds, Contact, Item, OrderItem, Order, Payment, Coupon, Refund, Address, UserProfile
+from .models import ThankYou, SellWIthUsTwo, Gallery, SellWithUs, Terms, Privacy, Refunds, Contact, Item, OrderItem, Order, Payment, Coupon, Refund, Address, UserProfile
 
 
 def make_refund_accepted(modeladmin, request, queryset):
@@ -78,4 +78,5 @@ admin.site.register(Privacy)
 admin.site.register(Refunds)
 admin.site.register(SellWithUs)
 admin.site.register(Gallery)
+admin.site.register(ThankYou)
 admin.site.register(SellWIthUsTwo, SellWithUsAdmin)

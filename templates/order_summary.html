@@ -43,7 +43,7 @@
                       <td class="cart-product-price">
                         {% if order_item.item.discount_price %}
                         {{ order_item.get_total_discount_item_price }} LEI
-                        <span class="badge badge-success">Saving ${{ order_item.get_amount_saved }}</span>
+                        <span class="badge badge-success">Saving LEI{{ order_item.get_amount_saved }}</span>
                         {% else %}
                         ${{ order_item.get_total_item_price }}
                         {% endif %}

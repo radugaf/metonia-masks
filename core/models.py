@@ -245,6 +245,9 @@ class Terms(models.Model):
     def __str__(self):
         return self.title_terms
 
+    class Meta:
+        verbose_name_plural = 'Terms'
+
 
 class Privacy(models.Model):
     title_privacy = models.CharField(max_length=250)
@@ -260,4 +263,11 @@ class SellWithUs(models.Model):
 
 class Gallery(models.Model):
     gallery_title = models.CharField(max_length=250)
+
+class ThankYou(models.Model):
+    title = models.CharField(max_length=100, null=True)
+    content = models.CharField(max_length=100, null=True)
+
+    def __str__(self):
+        return self.title
 

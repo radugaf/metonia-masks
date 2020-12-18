@@ -13,7 +13,7 @@ from django.utils import timezone
 from django.views.generic import ListView, DetailView, View
 
 from .forms import CheckoutForm, CouponForm, RefundForm, PaymentForm, SellWithUsTwoForm
-from .models import Gallery, SellWithUs, Item, OrderItem, Order, Address, Payment, Coupon, Refund, UserProfile, Terms, Privacy, Refunds, SellWIthUsTwo
+from .models import ThankYou, Gallery, SellWithUs, Item, OrderItem, Order, Address, Payment, Coupon, Refund, UserProfile, Terms, Privacy, Refunds, SellWIthUsTwo
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
 
@@ -93,7 +93,7 @@ class CheckoutView(View):
                     order.shipping_address = shipping_address
                     order.save()
 
-                    return redirect('core:home')    
+                    return redirect('core:thankyou')    
                 else:
                     messages.info(self.request, "Please fill in the required shipping address fields")
                     return redirect('core:checkout')    
@@ -249,7 +249,6 @@ class PaymentView(View):
         messages.warning(self.request, "Invalid data received")
         return redirect("/payment/stripe/")
 
-
 class HomeView(ListView):
     model = Item
     paginate_by = 10
@@ -276,6 +275,10 @@ class ItemDetailView(DetailView):
 class AboutView(ListView):
     model = Item
     template_name = "about.html"
+
+class ThankYouView(ListView):
+    model = ThankYou
+    template_name = "thankyou.html"
 
 class Terms(ListView):
     model = Terms
