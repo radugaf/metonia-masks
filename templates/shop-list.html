@@ -33,13 +33,15 @@
                   <img src="{{ item.image.url }}" alt="Product" class="primary-image" />
                   {% endif %}
                   {% if item.image_lateral1 %}
-                  <img src="{{ item.image_lateral1e.url }}" alt="Product" class="secondary-image" />
+                  <img src="{{ item.image_lateral1.url }}" alt="Product" class="secondary-image" />
                   {% endif %}
+                  <a href="{{ item.get_absolute_url }}">
                   <div class="product-img-overlay">
                     <span class="product-label discount">
                       {{ item.get_label_display }}
                     </span>
                   </div>
+                  </a>
                 </div>
                 <div class="product-content text-center">
                   <span>{{ item.get_category_display }}</span>
