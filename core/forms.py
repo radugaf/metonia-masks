@@ -19,6 +19,8 @@ class CheckoutForm(forms.Form):
             'class': 'custom-select d-block w-100',
         }))
     shipping_zip = forms.CharField(required=False)
+    phone = forms.CharField(required=True)
+    email = forms.CharField(required=True)
 
     # billing_address = forms.CharField(required=False)
     # billing_address2 = forms.CharField(required=False)
