@@ -37,7 +37,11 @@
             <a class="btn btn-default" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
             <button class="btn btn-primary" type="submit">{% trans "Sign In" %}</button>
             <p><strong>-- OR --</strong></p>
-    <a href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a>
+            <div class="container">
+              <a class="btn btn-lg btn-social btn-facebook" href="{% url 'social:begin' 'facebook' %}">
+              <i class="fa fa-facebook fa-fw"></i> Sign in with Facebook
+              </a>
+          </div>
           </form>
           </div>
         </div>
