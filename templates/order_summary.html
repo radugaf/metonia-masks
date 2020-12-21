@@ -45,7 +45,7 @@
                         {{ order_item.get_total_discount_item_price }} LEI
                         <span class="badge badge-success">Saving LEI{{ order_item.get_amount_saved }}</span>
                         {% else %}
-                        ${{ order_item.get_total_item_price }}
+                        {{ order_item.get_total_item_price }} LEI
                         {% endif %}
                         <a style='color: red;' href="{% url 'core:remove-from-cart' order_item.item.slug %}">
                           <i class="fas fa-trash float-right"></i>
